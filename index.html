@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<style>
+  text {
+    font: 15px "Times New Roman", Times, serif;
+  }
+  .barmen {
+    fill: #028090;
+  }
+  .barmen:hover {
+    fill: lightblue;
+  }
+  .barwomen {
+    fill: #ff686b;
+  }
+  .barwomen:hover {
+    fill: lightpink;
+  }
+  .d3-tip {
+    line-height: 1;
+    padding: 6px;
+    background: #212529;
+    color: #fff;
+    font-size: 12px;
+  }
+</style>
+<body>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="d3-tip.js"></script>
+  <script>
+    // dimensions of the double bar chart
+    var margin = { top: 40, right: 40, bottom: 60, left: 40 },
+      width = 800 - margin.left - margin.right,
+      height = 300 - margin.top - margin.bottom,
+      middleSection = width - (width / 2.5) * 2;
+
+    // the y, right x and left x ranges
+    var y = d3.scaleBand().range([height, 0]).padding(0.1);
+    var x = d3.scaleLinear().range([width / 2.5, 0]);
+    var xTwo = d3.scaleLinear().range([0, width / 2.5]);
+
+    // creating the svg chart object 
+    var svg = d3
+      .select("body")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // the title background rectangle
+    svg.append("rect")
+       .style("fill", "#212529")
+       .attr("width", width + margin.left + margin.right)
+       .attr("height", margin.top)
+       .attr("transform", "translate(" + (0 - margin.left) + "," + (0 - margin.top) + ")");
+
+    // the chart background rectangle
+    svg.append("rect")
+       .style("fill", "#e9ecef")
+       .attr("width", width + margin.left + margin.right)
+       .attr("height", height + margin.bottom)
+       .attr("transform", "translate(" + (0 - margin.left) + ",0)");
+
+    // parsing the data to use from the csv file
+    d3.csv("anahita.csv").then(function (data) {
+      // organizing the data of the male and female actors
+      data.forEach(function (d) {
+        d.maleactors = +d.maleactors;
+        d.femaleactors = +d.femaleactors;
+      });
+
+      // setting up the domains for the y and two x axises
+      // taking the higher value for max with male and female actors
+      y.domain(
+        data.map(function (d) {
+          return d.film;
+        })
+      );
+      x.domain([
+        0,
+        d3.max(data, function (d) {
+          return Math.max(d.maleactors + 5, d.femaleactors + 5);
+        }),
+      ]);
+      xTwo.domain([
+        0,
+        d3.max(data, function (d) {
+          return Math.max(d.maleactors + 5, d.femaleactors + 5);
+        }),
+      ]);
+
+      // declaring the tooltip for the left bars and right bars
+      var tipRight = d3
+        .tip()
+        .attr("class", "d3-tip")
+        .direction("w")
+        .offset([0, -5])
+        .html(function (d) {
+          var content =
+            "<span style='margin-left: 2.5px;'><b>" +
+            "Film: " +
+            d.film +
+            "</b></span><br>" +
+            "<span style='margin-left: 2.5px;'><b>" +
+            "Male Actors: " +
+            d.maleactors +
+            "</b></span><br>";
+          return content;
+        });
+      svg.call(tipRight);
+
+      var tipLeft = d3
+        .tip()
+        .attr("class", "d3-tip")
+        .direction("e")
+        .offset([0, 5])
+        .html(function (d) {
+          var content =
+            "<span style='margin-left: 2.5px;'><b>" +
+            "Film: " +
+            d.film +
+            "</b></span><br>" +
+            "<span style='margin-left: 2.5px;'><b>" +
+            "Female Actors: " +
+            d.femaleactors +
+            "</b></span><br>";
+          return content;
+        });
+      svg.call(tipLeft);
+
+      // adding in the left bars (males) and the right bars (females)
+      svg
+        .selectAll(".barleft")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("class", "barmen")
+        .attr("y", function (d) {
+          return y(d.film);
+        })
+        .attr("height", y.bandwidth())
+        .attr("x", function (d) {
+          return x(d.maleactors);
+        })
+        .attr("width", function (d) {
+          return width / 2.5 - x(d.maleactors);
+        })
+        .on("mouseover", tipRight.show)
+        .on("mouseout", tipRight.hide);
+
+      svg
+        .selectAll(".barright")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("class", "barwomen")
+        .attr("y", function (d) {
+          return y(d.film);
+        })
+        .attr("height", y.bandwidth())
+        .attr("x", function (d) {
+          return (width / 2.5) + middleSection;
+        })
+        .attr("width", function (d) {
+          return xTwo(d.femaleactors);
+        })
+        .on("mouseover", tipLeft.show)
+        .on("mouseout", tipLeft.hide);
+
+      // adding the film titles to the middle section of the chart
+      svg
+        .selectAll("g")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("y", function (d) {
+          return y(d.film) + y.bandwidth() / 2;
+        })
+        .attr("x", function (d) {
+          return width / 2.5 + middleSection / 2;
+        })
+        .attr("text-anchor", "middle")
+        .text(function (d) {
+          return d.film;
+        })
+        .style("font-size", function (d) {
+          if (this.getComputedTextLength() >= middleSection) {
+            return 12 + "px";
+          }
+        })
+        .call(wrap, middleSection);
+      
+      // adding the bottom axises
+      svg
+        .append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(
+          d3.axisBottom(x).ticks(
+            d3.max(data, function (d) {
+              return Math.max(d.maleactors + 5, d.femaleactors + 5);
+            }) / 2
+          )
+        );
+
+      svg
+        .append("g")
+        .attr("transform", "translate(" + ((width / 2.5) + middleSection) + "," + height + ")")
+        .call(
+          d3.axisBottom(xTwo).ticks(
+            d3.max(data, function (d) {
+              return Math.max(d.maleactors + 5, d.femaleactors + 5);
+            }) / 2
+          )
+        );
+
+      // adding the labels: title and x labels
+      svg
+        .append("text")
+        .attr(
+          "transform",
+          "translate(" + (width / 2.5 + (middleSection / 2)) + "," + (0 - margin.top / 3) + ")"
+        )
+        .attr("text-anchor", "middle")
+        .style("font-size", "18px")
+        .style("fill", "white")
+        .text("Gender Differences In Film");
+
+      svg
+        .append("text")
+        .attr(
+          "transform",
+          "translate(" +(width / 2.5 / 2) + "," + (10 + height + margin.bottom / 2) + ")"
+        )
+        .style("text-anchor", "middle")
+        .text("Male Actors");
+
+      svg
+        .append("text")
+        .attr(
+          "transform",
+          "translate(" +(width / 2.5 + (middleSection / 2)) + "," + (10 + height + margin.bottom / 2) + ")"
+        )
+        .style("text-anchor", "middle")
+        .text("Anahita Ghazvinizadeh Films");
+
+      svg
+        .append("text")
+        .attr(
+          "transform",
+          "translate(" +(width / 2.5 + middleSection + (width / 2.5 / 2)) + "," + (10 + height + margin.bottom / 2) + ")"
+        )
+        .style("text-anchor", "middle")
+        .text("Female Actors");
+    });
+
+    // function to wrap the film title if it exceeds the middle section
+    function wrap(text, width) {
+      text.each(function () {
+        var text = d3.select(this),
+          words = text.text().split(/\s+/).reverse(),
+          word,
+          line = [],
+          lineNumber = 0,
+          lineHeight = 1.1,
+          x = text.attr("x"),
+          y = text.attr("y"),
+          dy = 0,
+          tspan = text
+            .text(null)
+            .append("tspan")
+            .attr("x", x)
+            .attr("y", y)
+            .attr("dy", dy + "em");
+        while ((word = words.pop())) {
+          line.push(word);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > width) {
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [word];
+            tspan = text
+              .append("tspan")
+              .attr("x", x)
+              .attr("y", y)
+              .attr("dy", ++lineNumber * lineHeight + dy + "em")
+              .text(word);
+          }
+        }
+      });
+    }
+  </script>
+</body>
