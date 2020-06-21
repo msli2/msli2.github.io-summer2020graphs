@@ -1,292 +1,521 @@
 <!DOCTYPE html>
-<meta charset="utf-8" />
+<head>
+  <meta charset="utf-8" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
 <style>
-  text {
-    font: 15px "Times New Roman", Times, serif;
-  }
-  .barmen {
-    fill: #028090;
-  }
-  .barmen:hover {
-    fill: lightblue;
-  }
-  .barwomen {
-    fill: #ff686b;
-  }
-  .barwomen:hover {
-    fill: lightpink;
+  body {
+    font-family: "Times New Roman", Times, serif;
   }
   .d3-tip {
     line-height: 1;
     padding: 6px;
     background: #212529;
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
+  }
+  button,
+  .card {
+    padding: 1;
+    border: none;
+    background: none;
+    display: block;
+    text-align: left;
+  }
+  button:hover {
+    background: #212529;
+    color: white;
+  }
+  button:focus {
+    outline: 0;
+  }
+  .card-header {
+    background: none;
+    font-size: 16px;
+  }
+  .card-body {
+    font-size: 14px;
+  }
+  #accordion {
+    border: 1px solid lightgrey;
+  }
+  .scroll {
+    max-height: 200px;
+    overflow-y: auto;
   }
 </style>
 <body>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="d3-tip.js"></script>
+  <h5 style="padding-left: 15px; padding-top: 20px;">
+    Gender Differences In Films
+  </h5>
+  <div class="row" style="padding-left: 15px;">
+    <div class="col-md-2">
+      <div class="tableOfContents">
+        <h6 style="padding-top: 10px; text-align: center; font-size: 18px;">
+          Female Directors
+        </h6>
+        <div id="accordion">
+          <div class="card">
+            <div
+              class="card-header collapsed card-link"
+              data-toggle="collapse"
+              data-target="#collapseOne"
+            >
+              Anahita Ghazvinizadeh
+            </div>
+            <div id="collapseOne" class="collapse" data-parent="#accordion">
+              <div class="card-body scroll">
+                <button onclick="chooseFilm('They')">They</button>
+                <button onclick="chooseFilm('What Remains')">
+                  What Remains
+                </button>
+                <button onclick="chooseFilm('Needle')">Needle</button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="card-header collapsed card-link"
+              data-toggle="collapse"
+              data-target="#collapseTwo"
+            >
+              Agnieszka Holland
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+              <div class="card-body scroll">
+                <button onclick="chooseFilm('Golden Dreams')">
+                  Golden Dreams
+                </button>
+                <button onclick="chooseFilm('The Wire (2004-2008)')">
+                  The Wire (2004-2008)
+                </button>
+                <button onclick="chooseFilm('House of Cards (2015-2017)')">
+                  House of Cards (2015-2017)
+                </button>
+                <button onclick="chooseFilm('Rosemary\'s Baby')">
+                  Rosemary's Baby
+                </button>
+                <button onclick="chooseFilm('Television Theater')">
+                  Television Theater
+                </button>
+                <button onclick="chooseFilm('Spoor')">Spoor</button>
+                <button onclick="chooseFilm('Fever')">Fever</button>
+                <button onclick="chooseFilm('Olivier, Olivier')">
+                  Olivier, Olivier
+                </button>
+                <button onclick="chooseFilm('Obrazki z zycia')">
+                  Obrazki z zycia
+                </button>
+                <button onclick="chooseFilm('Julie Walking Home')">
+                  Julie Walking Home
+                </button>
+                <button onclick="chooseFilm('Largo desolato')">
+                  Largo desolato
+                </button>
+                <button onclick="chooseFilm('Fallen Angels')">
+                  Fallen Angels
+                </button>
+                <button onclick="chooseFilm('In Darkness')">In Darkness</button>
+                <button onclick="chooseFilm('Shot in the Heart')">
+                  Shot in the Heart
+                </button>
+                <button onclick="chooseFilm('Washington Square')">
+                  Washington Square
+                </button>
+                <button onclick="chooseFilm('1983')">1983</button>
+                <button onclick="chooseFilm('The Affair')">The Affair</button>
+                <button onclick="chooseFilm('The Killing (2011-2012)')">
+                  The Killing (2011-2012)
+                </button>
+                <button onclick="chooseFilm('Culture')">Culture</button>
+                <button onclick="chooseFilm('Mr. Jones')">Mr. Jones</button>
+                <button onclick="chooseFilm('Screen Tests')">
+                  Screen Tests
+                </button>
+                <button onclick="chooseFilm('Europa Europa')">
+                  Europa Europa
+                </button>
+                <button onclick="chooseFilm('Charlatan')">Charlatan</button>
+                <button onclick="chooseFilm('Angry Harvest')">
+                  Angry Harvest
+                </button>
+                <button onclick="chooseFilm('Burning Bush')">
+                  Burning Bush
+                </button>
+                <button onclick="chooseFilm('Sunday Children')">
+                  Sunday Children
+                </button>
+                <button onclick="chooseFilm('To Kill a Priest')">
+                  To Kill a Priest
+                </button>
+                <button onclick="chooseFilm('Copying Beethoven')">
+                  Copying Beethoven
+                </button>
+                <button onclick="chooseFilm('Treme (2010-2013)')">
+                  Treme (2010-2013)
+                </button>
+                <button onclick="chooseFilm('Total Eclipse')">
+                  Total Eclipse
+                </button>
+                <button onclick="chooseFilm('Something for Something')">
+                  Something for Something
+                </button>
+                <button onclick="chooseFilm('Without Secrets')">
+                  Without Secrets
+                </button>
+                <button onclick="chooseFilm('Cold Case (2004-2009)')">
+                  Cold Case (2004-2009)
+                </button>
+                <button onclick="chooseFilm('Provincial Actors')">
+                  Provincial Actors
+                </button>
+                <button onclick="chooseFilm('Ekipa')">Ekipa</button>
+                <button onclick="chooseFilm('The Third Miracle')">
+                  The Third Miracle
+                </button>
+                <button onclick="chooseFilm('Jesus Christ\'s Sin')">
+                  Jesus Christ's Sin
+                </button>
+                <button onclick="chooseFilm('Evening at Abdon\'s')">
+                  Evening at Abdon's
+                </button>
+                <button onclick="chooseFilm('Kobieta samotna')">
+                  Kobieta samotna
+                </button>
+                <button onclick="chooseFilm('The Secret Garden')">
+                  The Secret Garden
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="card-header collapsed card-link"
+              data-toggle="collapse"
+              data-target="#collapseThree"
+            >
+              Claire Denis
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+              <div class="card-body scroll">
+                <button onclick="chooseFilm('The Intruder')">
+                  The Intruder
+                </button>
+                <button onclick="chooseFilm('Voilà l\'enchaînement')">
+                  Voilà l'enchaînement
+                </button>
+                <button onclick="chooseFilm('Figaro Story')">
+                  Figaro Story
+                </button>
+                <button onclick="chooseFilm('Cinéma, de notre temps')">
+                  Cinéma, de notre temps
+                </button>
+                <button onclick="chooseFilm('No Fear, No Die')">
+                  No Fear, No Die
+                </button>
+                <button onclick="chooseFilm('Toward Mathilde')">
+                  Toward Mathilde
+                </button>
+                <button onclick="chooseFilm('To the Devil')">
+                  To the Devil
+                </button>
+                <button onclick="chooseFilm('Lest We Forget')">
+                  Lest We Forget
+                </button>
+                <button
+                  onclick="chooseFilm('New Reports from France (1972-1973)')"
+                >
+                  New Reports from France (1972-1973)
+                </button>
+                <button
+                  onclick="chooseFilm('Tous les garçons et les filles de leur âge...')"
+                >
+                  Tous les garçons et les filles de leur âge...
+                </button>
+                <button onclick="chooseFilm('Nenette and Boni')">
+                  Nenette and Boni
+                </button>
+                <button onclick="chooseFilm('Keep It for Yourself')">
+                  Keep It for Yourself
+                </button>
+                <button onclick="chooseFilm('White Material')">
+                  White Material
+                </button>
+                <button onclick="chooseFilm('Bastards')">Bastards</button>
+                <button onclick="chooseFilm('35 Shots of Rum')">
+                  35 Shots of Rum
+                </button>
+                <button onclick="chooseFilm('Friday Night')">
+                  Friday Night
+                </button>
+                <button onclick="chooseFilm('À propos de Nice, la suite')">
+                  À propos de Nice, la suite
+                </button>
+                <button onclick="chooseFilm('Beau travail')">
+                  Beau travail
+                </button>
+                <button
+                  onclick="chooseFilm('We, France\'s Undocumented Immigrants')"
+                >
+                  We, France's Undocumented Immigrants
+                </button>
+                <button onclick="chooseFilm('Chocolat')">Chocolat</button>
+                <button onclick="chooseFilm('The Breidjing Camp')">
+                  The Breidjing Camp
+                </button>
+                <button onclick="chooseFilm('Let the Sunshine In')">
+                  Let the Sunshine In
+                </button>
+                <button onclick="chooseFilm('Monologues')">Monologues</button>
+                <button onclick="chooseFilm('Trouble Every Day')">
+                  Trouble Every Day
+                </button>
+                <button onclick="chooseFilm('High Life')">High Life</button>
+                <button onclick="chooseFilm('I Can\'t Sleep')">
+                  I Can't Sleep
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="card-header collapsed card-link"
+              data-toggle="collapse"
+              data-target="#collapseFour"
+            >
+              Mary Harron
+            </div>
+            <div id="collapseFour" class="collapse" data-parent="#accordion">
+              <div class="card-body scroll">
+                <button onclick="chooseFilm('Six Degrees')">Six Degrees</button>
+                <button onclick="chooseFilm('The L Word')">The L Word</button>
+                <button onclick="chooseFilm('Anna Nicole')">Anna Nicole</button>
+                <button onclick="chooseFilm('Big Love')">Big Love</button>
+                <button onclick="chooseFilm('Charlie Says')">Charlie Says</button>
+                <button onclick="chooseFilm('Oz')">Oz</button>
+                <button onclick="chooseFilm('The Nine')">The Nine</button>
+                <button onclick="chooseFilm('I Shot Andy Warhol')">I Shot Andy Warhol</button>
+                <button onclick="chooseFilm('Six Feet Under')">Six Feet Under</button>
+                <button onclick="chooseFilm('The Notorious Bettie Page')">The Notorious Bettie Page</button>
+                <button onclick="chooseFilm('Fear Itself')">Fear Itself</button>
+                <button onclick="chooseFilm('American Psycho')">American Psycho</button>
+                <button onclick="chooseFilm('Sonnet for a Towncar')">Sonnet for a Towncar</button>
+                <button onclick="chooseFilm('Pasadena')">Pasadena</button>
+                <button onclick="chooseFilm('The Following')">The Following</button>
+                <button onclick="chooseFilm('The Late Show')">The Late Show</button>
+                <button onclick="chooseFilm('The Moth Diaries')">The Moth Diaries</button>
+                <button onclick="chooseFilm('Graceland')">Graceland</button>
+                <button onclick="chooseFilm('The Expecting')">The Expecting</button>
+                <button onclick="chooseFilm('Alias Grace')">Alias Grace</button>
+                <button onclick="chooseFilm('Constantine')">Constantine</button>
+                <button onclick="chooseFilm('Armani')">Armani</button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="card-header collapsed card-link"
+              data-toggle="collapse"
+              data-target="#collapseFive"
+            >
+              Mira Nair
+            </div>
+            <div id="collapseFive" class="collapse" data-parent="#accordion">
+              <div class="card-body scroll">
+                <button onclick="chooseFilm('My Own Country')">My Own Country</button>
+                <button onclick="chooseFilm('Mississippi Masala')">Mississippi Masala</button>
+                <button onclick="chooseFilm('Hello Bombay!')">Hello Bombay!</button>
+                <button onclick="chooseFilm('Queen of Katwe')">Queen of Katwe</button>
+                <button onclick="chooseFilm('8')">8</button>
+                <button onclick="chooseFilm('September 11')">September 11</button>
+                <button onclick="chooseFilm('Words with Gods')">Words with Gods</button>
+                <button onclick="chooseFilm('The Perez Family')">The Perez Family</button>
+                <button onclick="chooseFilm('Migration')">Migration</button>
+                <button onclick="chooseFilm('The Reluctant Fundamentalist')">The Reluctant Fundamentalist</button>
+                <button onclick="chooseFilm('A Suitable Boy')">A Suitable Boy</button>
+                <button onclick="chooseFilm('Monsoon Wedding')">Monsoon Wedding</button>
+                <button onclick="chooseFilm('Amelia')">Amelia</button>
+                <button onclick="chooseFilm('Hysterical Blindness')">Hysterical Blindness</button>
+                <button onclick="chooseFilm('Vanity Fair')">Vanity Fair</button>
+                <button onclick="chooseFilm('The Namesake')">The Namesake</button>
+                <button onclick="chooseFilm('New York, I Love You')">New York, I Love You</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10"></div>
+  </div>
   <script>
-    // dimensions of the double bar chart
-    var margin = { top: 40, right: 40, bottom: 60, left: 40 },
-      width = 800 - margin.left - margin.right,
-      height = 300 - margin.top - margin.bottom,
-      middleSection = width - (width / 2.5) * 2;
+    // dimensions
+    var margin = { top: 30, right: 0, bottom: 10, left: 40 },
+      width = 840 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
 
-    // the y, right x and left x ranges
-    var y = d3.scaleBand().range([height, 0]).padding(0.1);
-    var x = d3.scaleLinear().range([width / 2.5, 0]);
-    var xTwo = d3.scaleLinear().range([0, width / 2.5]);
-
-    // creating the svg chart object 
     var svg = d3
-      .select("body")
+      .select(".col-md-10")
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    // the title background rectangle
-    svg.append("rect")
-       .style("fill", "#212529")
-       .attr("width", width + margin.left + margin.right)
-       .attr("height", margin.top)
-       .attr("transform", "translate(" + (0 - margin.left) + "," + (0 - margin.top) + ")");
-
-    // the chart background rectangle
-    svg.append("rect")
-       .style("fill", "#e9ecef")
-       .attr("width", width + margin.left + margin.right)
-       .attr("height", height + margin.bottom)
-       .attr("transform", "translate(" + (0 - margin.left) + ",0)");
-
-    // parsing the data to use from the csv file
-    d3.csv("anahita.csv").then(function (data) {
-      // organizing the data of the male and female actors
-      data.forEach(function (d) {
-        d.maleactors = +d.maleactors;
-        d.femaleactors = +d.femaleactors;
+    // the tooltip point to show the film, actor and role
+    let tip = d3
+      .tip()
+      .attr("class", "d3-tip")
+      .direction("n")
+      .offset([0, 0])
+      .html(function (d) {
+        var content =
+          "<span style='margin-left: 2.5px;'><b>" +
+          "Actor: " +
+          d.actor +
+          "</b></span><br>" +
+          "<span style='margin-left: 2.5px;'><b>" +
+          "Role: " +
+          d.role +
+          "</b></span><br>";
+        return content;
       });
+    svg.call(tip);
 
-      // setting up the domains for the y and two x axises
-      // taking the higher value for max with male and female actors
-      y.domain(
-        data.map(function (d) {
-          return d.film;
-        })
-      );
-      x.domain([
-        0,
-        d3.max(data, function (d) {
-          return Math.max(d.maleactors + 5, d.femaleactors + 5);
-        }),
-      ]);
-      xTwo.domain([
-        0,
-        d3.max(data, function (d) {
-          return Math.max(d.maleactors + 5, d.femaleactors + 5);
-        }),
-      ]);
+    chooseFilm("They");
 
-      // declaring the tooltip for the left bars and right bars
-      var tipRight = d3
-        .tip()
-        .attr("class", "d3-tip")
-        .direction("w")
-        .offset([0, -5])
-        .html(function (d) {
-          var content =
-            "<span style='margin-left: 2.5px;'><b>" +
-            "Film: " +
-            d.film +
-            "</b></span><br>" +
-            "<span style='margin-left: 2.5px;'><b>" +
-            "Male Actors: " +
-            d.maleactors +
-            "</b></span><br>";
-          return content;
+    function chooseFilm(film) {
+      d3.csv("films.csv").then((data) => {
+        d3.selectAll("svg > g > *").remove();
+
+        dataFiltered = data.filter(function (d) {
+          return d.film == film;
         });
-      svg.call(tipRight);
 
-      var tipLeft = d3
-        .tip()
-        .attr("class", "d3-tip")
-        .direction("e")
-        .offset([0, 5])
-        .html(function (d) {
-          var content =
-            "<span style='margin-left: 2.5px;'><b>" +
-            "Film: " +
-            d.film +
-            "</b></span><br>" +
-            "<span style='margin-left: 2.5px;'><b>" +
-            "Female Actors: " +
-            d.femaleactors +
-            "</b></span><br>";
-          return content;
-        });
-      svg.call(tipLeft);
+        let malefemale = ["m", "f"];
+        let xCoords = malefemale.map((d, i) => 200 + i * 400);
+        let xScale = d3.scaleOrdinal().domain(malefemale).range(xCoords);
+        let yScale = d3
+          .scaleLinear()
+          .domain(d3.extent(dataFiltered.map((d) => +d["space"])))
+          .range([height - 50, 50]);
+        let color = d3
+          .scaleOrdinal()
+          .domain(malefemale)
+          .range(["#028090", "#ff686b"]);
 
-      // adding in the left bars (males) and the right bars (females)
-      svg
-        .selectAll(".barleft")
-        .data(data)
-        .enter()
-        .append("rect")
-        .attr("class", "barmen")
-        .attr("y", function (d) {
-          return y(d.film);
-        })
-        .attr("height", y.bandwidth())
-        .attr("x", function (d) {
-          return x(d.maleactors);
-        })
-        .attr("width", function (d) {
-          return width / 2.5 - x(d.maleactors);
-        })
-        .on("mouseover", tipRight.show)
-        .on("mouseout", tipRight.hide);
+        let maleNum = d3.sum(dataFiltered, (d) => d.gender == "m");
+        let femaleNum = d3.sum(dataFiltered, (d) => d.gender == "f");
+        var count = 0;
 
-      svg
-        .selectAll(".barright")
-        .data(data)
-        .enter()
-        .append("rect")
-        .attr("class", "barwomen")
-        .attr("y", function (d) {
-          return y(d.film);
-        })
-        .attr("height", y.bandwidth())
-        .attr("x", function (d) {
-          return (width / 2.5) + middleSection;
-        })
-        .attr("width", function (d) {
-          return xTwo(d.femaleactors);
-        })
-        .on("mouseover", tipLeft.show)
-        .on("mouseout", tipLeft.hide);
+        svg
+          .selectAll("g")
+          .data(data)
+          .enter()
+          .append("text")
+          .attr("transform", "translate(" + width / 2 + "," + 0 + ")")
+          .style("text-anchor", "middle")
+          .style("font-size", 18)
+          .text(function (d) {
+            if (d.film == film && count == 0) {
+              count += 1;
+              return d.director + ": " + d.film;
+            }
+          });
 
-      // adding the film titles to the middle section of the chart
-      svg
-        .selectAll("g")
-        .data(data)
-        .enter()
-        .append("text")
-        .attr("y", function (d) {
-          return y(d.film) + y.bandwidth() / 2;
-        })
-        .attr("x", function (d) {
-          return width / 2.5 + middleSection / 2;
-        })
-        .attr("text-anchor", "middle")
-        .text(function (d) {
-          return d.film;
-        })
-        .style("font-size", function (d) {
-          if (this.getComputedTextLength() >= middleSection) {
-            return 12 + "px";
-          }
-        })
-        .call(wrap, middleSection);
-      
-      // adding the bottom axises
-      svg
-        .append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(
-          d3.axisBottom(x).ticks(
-            d3.max(data, function (d) {
-              return Math.max(d.maleactors + 5, d.femaleactors + 5);
-            }) / 2
+        svg
+          .append("rect")
+          .style("fill", "#ff686b")
+          .attr("width", width)
+          .attr("height", 25)
+          .attr("transform", "translate(" + 0 + "," + (height - 50) + ")");
+
+        svg
+          .append("rect")
+          .style("fill", "#028090")
+          .attr("width", (maleNum / (maleNum + femaleNum)) * width)
+          .attr("height", 25)
+          .attr("transform", "translate(" + 0 + "," + (height - 50) + ")");
+
+        svg
+          .append("text")
+          .attr("transform", "translate(" + width / 4 + "," + height + ")")
+          .style("text-anchor", "middle")
+          .style("font-size", 16)
+          .text("Male Actors: " + maleNum);
+
+        svg
+          .append("text")
+          .attr(
+            "transform",
+            "translate(" + (3 * width) / 4 + "," + height + ")"
           )
-        );
+          .style("text-anchor", "middle")
+          .style("font-size", 16)
+          .text("Female Actors: " + femaleNum);
 
-      svg
-        .append("g")
-        .attr("transform", "translate(" + ((width / 2.5) + middleSection) + "," + height + ")")
-        .call(
-          d3.axisBottom(xTwo).ticks(
-            d3.max(data, function (d) {
-              return Math.max(d.maleactors + 5, d.femaleactors + 5);
-            }) / 2
+        var node = svg.selectAll(".persons").data(dataFiltered);
+
+        node
+          .enter()
+          .append("text")
+          .attr("class", "persons")
+          .style("font-family", "Linearicons-Free")
+          .attr("font-size", "22px")
+          .text("\ue82a")
+          .attr("x", (d) => xScale(d.gender))
+          .attr("y", (d) => yScale(d.space))
+          .style("fill", (d) => color(d.gender))
+          .on("mouseover", tip.show)
+          .on("mouseout", tip.hide);
+
+        let simulation = d3
+          .forceSimulation(dataFiltered)
+          .force(
+            "x",
+            d3
+              .forceX((d) => {
+                return xScale(d.gender);
+              })
+              .strength(1)
           )
-        );
+          .force(
+            "y",
+            d3
+              .forceY((d) => {
+                return yScale(d.space);
+              })
+              .strength(1)
+          )
+          .force(
+            "collide",
+            d3.forceCollide((d) => {
+              return 15;
+            })
+          )
+          .alphaDecay(0)
+          .alpha(0.3)
+          .on("tick", tick);
 
-      // adding the labels: title and x labels
-      svg
-        .append("text")
-        .attr(
-          "transform",
-          "translate(" + (width / 2.5 + (middleSection / 2)) + "," + (0 - margin.top / 3) + ")"
-        )
-        .attr("text-anchor", "middle")
-        .style("font-size", "18px")
-        .style("fill", "white")
-        .text("Gender Differences In Film");
-
-      svg
-        .append("text")
-        .attr(
-          "transform",
-          "translate(" +(width / 2.5 / 2) + "," + (10 + height + margin.bottom / 2) + ")"
-        )
-        .style("text-anchor", "middle")
-        .text("Male Actors");
-
-      svg
-        .append("text")
-        .attr(
-          "transform",
-          "translate(" +(width / 2.5 + (middleSection / 2)) + "," + (10 + height + margin.bottom / 2) + ")"
-        )
-        .style("text-anchor", "middle")
-        .text("Anahita Ghazvinizadeh Films");
-
-      svg
-        .append("text")
-        .attr(
-          "transform",
-          "translate(" +(width / 2.5 + middleSection + (width / 2.5 / 2)) + "," + (10 + height + margin.bottom / 2) + ")"
-        )
-        .style("text-anchor", "middle")
-        .text("Female Actors");
-    });
-
-    // function to wrap the film title if it exceeds the middle section
-    function wrap(text, width) {
-      text.each(function () {
-        var text = d3.select(this),
-          words = text.text().split(/\s+/).reverse(),
-          word,
-          line = [],
-          lineNumber = 0,
-          lineHeight = 1.1,
-          x = text.attr("x"),
-          y = text.attr("y"),
-          dy = 0,
-          tspan = text
-            .text(null)
-            .append("tspan")
-            .attr("x", x)
-            .attr("y", y)
-            .attr("dy", dy + "em");
-        while ((word = words.pop())) {
-          line.push(word);
-          tspan.text(line.join(" "));
-          if (tspan.node().getComputedTextLength() > width) {
-            line.pop();
-            tspan.text(line.join(" "));
-            line = [word];
-            tspan = text
-              .append("tspan")
-              .attr("x", x)
-              .attr("y", y)
-              .attr("dy", ++lineNumber * lineHeight + dy + "em")
-              .text(word);
-          }
+        function tick() {
+          d3.selectAll(".persons")
+            .attr("x", (d) => d.x)
+            .attr("y", (d) => d.y);
         }
+        let init_decay = setTimeout(function () {
+          simulation.alphaDecay(0.1);
+        }, 500);
       });
     }
   </script>
