@@ -786,16 +786,16 @@
         </div>
       </div>
       <svg
-        class="chart col-xs-12 col-md-9"
-        viewBox="0 0 880 660"
-        preserveAspectRatio="xMidYMid meet"
+        class="chart col-md-8"
+        viewBox="0 0 840 600"
+        preserveAspectRatio="none"
       ></svg>
     </div>
     <script>
       // dimensions
-      var margin = {top: 40, right: 20, bottom: 120, left: 20},
+      var margin = { top: 40, right: 0, bottom: 120, left: 0},
         width = 840 - margin.left - margin.right,
-        height = 600 - margin.top - margin.bottom;
+        height = 660 - margin.top - margin.bottom;
 
       var svg = d3
         .select(".chart")
@@ -1026,9 +1026,11 @@
               .attr("x", (d) => d.x)
               .attr("y", (d) => d.y);
           }
+
           let init_decay = setTimeout(function () {
             simulation.alphaDecay(0.1);
           }, 500);
+
         });
       }
     </script>
