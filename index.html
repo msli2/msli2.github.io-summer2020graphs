@@ -16,7 +16,7 @@
 </head>
 <style>
   .navbar {
-    background-color: #252727;
+    background-color: #212529;
   }
   .navbar .navbar-brand {
     font-size: 24px;
@@ -84,14 +84,14 @@
   <script src="d3-tip.js"></script>
   <nav class="navbar navbar-expand-md">
     <a class="navbar-brand" href="index.html">Summer 2020 Graphs</a>
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Gender Differences</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="bubblechart.html">Reoccurring Actors</a>
-        </li>
-      </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Gender Differences</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="bubblechart.html">Reoccurring Actors</a>
+      </li>
+    </ul>
   </nav>
   <h5 style="padding-left: 15px; padding-top: 10px;">
     Gender Differences In Films
@@ -111,37 +111,6 @@
             Female Directors
           </h6>
           <div id="accordion">
-            <div class="card">
-              <div
-                class="card-header collapsed card-link"
-                data-toggle="collapse"
-                data-target="#collapseOne"
-              >
-                Anahita Ghazvinizadeh
-              </div>
-              <div id="collapseOne" class="collapse" data-parent="#accordion">
-                <div class="card-body scroll">
-                  <button
-                    class="col-md-12"
-                    onclick="chooseFilm('They', 'Anahita Ghazvinizadeh')"
-                  >
-                    They
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseFilm('What Remains', 'Anahita Ghazvinizadeh')"
-                  >
-                    What Remains
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseFilm('Needle', 'Anahita Ghazvinizadeh')"
-                  >
-                    Needle
-                  </button>
-                </div>
-              </div>
-            </div>
             <div class="card">
               <div
                 class="card-header collapsed card-link"
@@ -388,6 +357,37 @@
                     onclick="chooseFilm('The Secret Garden', 'Agnieszka Holland')"
                   >
                     The Secret Garden
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div
+                class="card-header collapsed card-link"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+              >
+                Anahita Ghazvinizadeh
+              </div>
+              <div id="collapseOne" class="collapse" data-parent="#accordion">
+                <div class="card-body scroll">
+                  <button
+                    class="col-md-12"
+                    onclick="chooseFilm('They', 'Anahita Ghazvinizadeh')"
+                  >
+                    They
+                  </button>
+                  <button
+                    class="col-md-12"
+                    onclick="chooseFilm('What Remains', 'Anahita Ghazvinizadeh')"
+                  >
+                    What Remains
+                  </button>
+                  <button
+                    class="col-md-12"
+                    onclick="chooseFilm('Needle', 'Anahita Ghazvinizadeh')"
+                  >
+                    Needle
                   </button>
                 </div>
               </div>
@@ -858,7 +858,7 @@
         });
       svg.call(tip);
 
-      chooseFilm("They", "Anahita Ghazvinizadeh");
+      chooseFilm("Golden Dreams", "Agnieszka Holland");
 
       function chooseFilm(film, director) {
         d3.csv("films.csv").then((data) => {
@@ -882,7 +882,7 @@
           let color = d3
             .scaleOrdinal()
             .domain(malefemale)
-            .range(["#028090", "#ff686b"]);
+            .range(["rgb(17, 138, 178)", "rgb(244, 124, 152)"]);
 
           let maleNum = d3.sum(dataFiltered, (d) => d.gender == "m");
           let femaleNum = d3.sum(dataFiltered, (d) => d.gender == "f");
@@ -927,16 +927,20 @@
 
           svg
             .append("rect")
-            .style("fill", "#ff686b")
+            .style("fill", "rgb(244, 124, 152)")
             .attr("width", width)
             .attr("height", 25)
+            .style("stroke", "lightgrey")
+            .style("stroke-width",1)
             .attr("transform", "translate(" + 0 + "," + (height - 50) + ")");
 
           svg
             .append("rect")
-            .style("fill", "#028090")
+            .style("fill", "rgb(17, 138, 178)")
             .attr("width", (maleNum / (maleNum + femaleNum)) * width)
             .attr("height", 25)
+            .style("stroke", "lightgrey")
+            .style("stroke-width",1)
             .attr("transform", "translate(" + 0 + "," + (height - 50) + ")");
 
           svg
