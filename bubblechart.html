@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+  .navbar {
+    background-color: #252727;
+  }
+  .navbar .navbar-brand {
+    font-size: 24px;
+  }
+  .navbar a,
+  .list-group-item {
+    color: white;
+    font-size: 16px;
+  }
+  body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+  }
+  .d3tipclass {
+    line-height: 1;
+    padding: 6px;
+    background: #212529;
+    color: #fff;
+    font-size: 13px;
+  }
+</style>
+<body>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="d3-tip.js"></script>
+  <nav class="navbar navbar-expand-md">
+    <a class="navbar-brand" href="index.html">Summer 2020 Graphs</a>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Gender Differences</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="bubblechart.html">Reoccurring Actors</a>
+      </li>
+    </ul>
+  </nav>
+  <h5 style="padding-left: 15px; padding-top: 10px;">
+    Reoccurring Actors for Female Directors
+  </h5>
+  <script>
+    var margin = { top: 60, right: 100, bottom: 40, left: 60 },
+      width = 800 - margin.left - margin.right,
+      height = 800 - margin.top - margin.bottom;
+
+    var diameter = 650,
+      color = d3.scaleOrdinal(d3.schemeSet2);
+
+    var bubblechart = d3.pack().size([diameter, diameter]);
+
+    var svg = d3
+      .select("body")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.bottom + margin.top)
+      .attr("class", "bubblechart")
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    d3.csv("actors.csv").then(function (data) {
+      let tip = d3
+        .tip()
+        .attr("class", "d3tipclass")
+        .direction("e")
+        .offset([0, 5])
+        .html(function (d) {
+          var content =
+            "<span style='margin-left: 2.5px;'><b>" +
+            "Actor: " +
+            d.data["actor"] +
+            "</b></span><br>" +
+            "<span style='margin-left: 2.5px;'><b>" +
+            "Gender: " +
+            d.data["gender"] +
+            "</b></span><br>";
+          return content;
+        });
+      svg.call(tip);
+
+      var root = d3
+        .hierarchy({ children: data })
+        .sum((d) => d.value)
+        .sort((a, b) => b.value - a.value);
+
+      bubblechart(root);
+
+      var bubbles = svg.selectAll(".bubblechart").data(root.children).enter();
+
+      bubbles
+        .append("circle")
+        .attr("class", "circle")
+        .attr("r", (d) => d.r)
+        .attr("cx", (d) => d.x)
+        .attr("cy", (d) => d.y)
+        .style("fill", (d) => color(d.value))
+        .on("mouseover", tip.show)
+        .on("mouseout", tip.hide);
+    });
+
+    var count = 0;
+
+    svg
+      .append("text")
+      .attr("transform", "translate(" + width / 2 + "," + (0 - margin.top / 3) + ")")
+      .style("text-anchor", "middle")
+      .style("font-size", 18)
+      .style("font-weight", 550)
+      .text("Agnieska Holland");
+
+    svg
+      .append("rect")
+      .attr("transform", "translate(" + (width + 20) + "," + 10 + ")")
+      .style("width", 20)
+      .style("height", 20)
+      .style("fill", "rgb(102, 194, 165)");
+
+    svg
+      .append("text")
+      .attr("transform", "translate(" + (width + 50) + "," + 25 + ")")
+      .style("fill", "black")
+      .text("5 Films");
+
+    svg
+      .append("rect")
+      .attr("transform", "translate(" + (width + 20) + "," + 40 + ")")
+      .style("width", 20)
+      .style("height", 20)
+      .style("fill", "rgb(252, 141, 98)");
+
+    svg
+      .append("text")
+      .attr("transform", "translate(" + (width + 50) + "," + 55 + ")")
+      .style("fill", "black")
+      .text("4 Films");
+
+    svg
+      .append("rect")
+      .attr("transform", "translate(" + (width + 20) + "," + 70 + ")")
+      .style("width", 20)
+      .style("height", 20)
+      .style("fill", "rgb(141, 160, 203)");
+
+    svg
+      .append("text")
+      .attr("transform", "translate(" + (width + 50) + "," + 85 + ")")
+      .style("fill", "black")
+      .text("3 Films");
+
+    svg
+      .append("rect")
+      .attr("transform", "translate(" + (width + 20) + "," + 100 + ")")
+      .style("width", 20)
+      .style("height", 20)
+      .style("fill", "rgb(231, 138, 195)");
+
+    svg
+      .append("text")
+      .attr("transform", "translate(" + (width + 50) + "," + 115 + ")")
+      .style("fill", "black")
+      .text("2 Films");
+  </script>
+</body>
