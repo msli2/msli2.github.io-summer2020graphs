@@ -111,7 +111,7 @@
               style="
                 padding: 5px;
                 text-align: center;
-                font-size: 18px;
+                font-size: 17px;
                 font-weight: 550;
               "
             >
@@ -207,6 +207,14 @@
           d3.selectAll("svg > g > *").remove();
           d3.selectAll("p#summary > text").remove();
 
+          dataDirector = data.filter(function (d) {
+            return d.director == director;
+          });
+
+          dataDirector.forEach(function(d) {
+            d.value = parseInt(d.value);
+          });
+
           var color = d3.scaleOrdinal([
             "#008777",
             "#67a1d1",
@@ -216,10 +224,6 @@
             "#f0a68a",
             "#ec7263",
           ]);
-
-          dataDirector = data.filter(function (d) {
-            return d.director == director;
-          });
 
           svg
             .append("text")
@@ -231,7 +235,7 @@
 
           let maleNum = d3.sum(dataDirector, (d) => d.gender == "m");
           let femaleNum = d3.sum(dataDirector, (d) => d.gender == "f");
-          let maxFilms = d3.max(dataDirector, (d) => d.value);
+          var maxFilms = d3.max(dataDirector.map(d => d.value));
 
           var summary = d3
             .select("p#summary")
