@@ -34,7 +34,7 @@
     padding: 6px;
     background: #212529;
     color: #fff;
-    font-size: 13px;
+    font-size: 14px;
   }
   button,
   .card {
@@ -89,12 +89,12 @@
         <a class="nav-link" href="index.html">Gender Differences</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="bubblechart.html">Reoccurring Actors</a>
+        <a class="nav-link" href="bubblechart.html">Recurring Actors</a>
       </li>
     </ul>
   </nav>
   <h5 style="padding-left: 15px; padding-top: 10px;">
-    Gender Differences In Films
+    Gender Differences in Female Directed Films
   </h5>
   <div class="container-fluid">
     <div class="row" style="padding-left: 15px;">
@@ -906,7 +906,7 @@
             .text(function (d) {
               if (d.film == film && count == 0) {
                 count += 1;
-                return d.director;
+                return "Director " + d.director;
               }
             });
 

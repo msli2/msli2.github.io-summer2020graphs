@@ -30,7 +30,7 @@
     padding: 6px;
     background: #212529;
     color: #fff;
-    font-size: 13px;
+    font-size: 14px;
   }
   button,
   .card {
@@ -57,7 +57,7 @@
     border: 1px solid lightgrey;
   }
   .scroll {
-    max-height: 600px;
+    max-height: 400px;
     overflow-y: auto;
   }
   .svg-container {
@@ -76,6 +76,11 @@
   }
   .options {
     border: 1px solid lightgrey;
+    text-align: center;
+  }
+  .btn-group {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 </style>
 <body>
@@ -88,47 +93,48 @@
         <a class="nav-link" href="index.html">Gender Differences</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="bubblechart.html">Reoccurring Actors</a>
+        <a class="nav-link" href="bubblechart.html">Recurring Actors</a>
       </li>
     </ul>
   </nav>
   <h5 style="padding-left: 15px; padding-top: 10px;">
-    Reoccurring Actors in Films
+    Recurring Actors for Each Female Director
   </h5>
   <div class="container-fluid">
     <div class="row" style="padding-left: 15px;">
       <div class="col-md-3">
         <div class="tableOfContents">
-          <h6
-            style="
-              padding-top: 10px;
-              text-align: center;
-              font-size: 18px;
-              font-weight: 550;
-            "
+          <div
+            style="border: 1px solid lightgrey; padding: 6px; margin-top: 10px;"
           >
-            Color Options
-          </h6>
-          <button class="col-md-12 options" onclick="chooseColor('gender')">
-            Gender
-          </button>
-          <button
-            class="col-md-12 options"
-            style="margin-bottom: 10px;"
-            onclick="chooseColor('value')"
-          >
-            # of Films
-          </button>
-          <h6
-            style="
-              padding-top: 10px;
-              text-align: center;
-              font-size: 18px;
-              font-weight: 550;
-            "
-          >
-            Director Options
-          </h6>
+            <h6
+              style="
+                padding: 5px;
+                text-align: center;
+                font-size: 18px;
+                font-weight: 550;
+              "
+            >
+              Summary About Director
+            </h6>
+            <div>
+              <p id="summary" style="text-align: center; line-height: 1.2;"></p>
+            </div>
+          </div>
+          <div class="btn-group d-flex">
+            <h6
+              class="w-100"
+              style="padding-top: 4px; font-weight: 600; text-align: center;"
+            >
+              Color Options
+            </h6>
+            <button class="options w-100" onclick="chooseColor('value')">
+              # of Films
+            </button>
+            <button class="options w-100" onclick="chooseColor('gender')">
+              Gender
+            </button>
+          </div>
           <div id="accordion">
             <div class="card">
               <div
@@ -179,11 +185,11 @@
       <div id="container" class="svg-container col-md-8"></div>
     </div>
     <script>
-      var margin = { top: 80, right: 100, bottom: 40, left: 60 },
+      var margin = { top: 60, right: 100, bottom: 40, left: 60 },
         width = 800 - margin.left - margin.right,
         height = 800 - margin.top - margin.bottom;
 
-      var bubblechart = d3.pack().size([640, 680]).padding(2);
+      var bubblechart = d3.pack().size([640, 600]).padding(2);
 
       var svg = d3
         .select("div#container")
@@ -199,8 +205,17 @@
       function chooseDirector(director) {
         d3.csv("actors.csv").then(function (data) {
           d3.selectAll("svg > g > *").remove();
+          d3.selectAll("p#summary > text").remove();
 
-          var color = d3.scaleOrdinal(['#008777', '#67a1d1', '#b6bef6', '#ffe2ff', '#fad3b4', '#f0a68a', '#ec7263']);
+          var color = d3.scaleOrdinal([
+            "#008777",
+            "#67a1d1",
+            "#b6bef6",
+            "#ffdaff",
+            "#fad3b4",
+            "#f0a68a",
+            "#ec7263",
+          ]);
 
           dataDirector = data.filter(function (d) {
             return d.director == director;
@@ -208,24 +223,33 @@
 
           svg
             .append("text")
-            .attr(
-              "transform",
-              "translate(" + width / 2 + "," + (0 - margin.top / 2) + ")"
-            )
+            .attr("transform", "translate(" + width / 2 + "," + -20 + ")")
             .style("text-anchor", "middle")
             .style("font-size", 18)
             .style("font-weight", 550)
-            .text(director);
+            .text("Director " + director);
 
-          svg
+          let maleNum = d3.sum(dataDirector, (d) => d.gender == "m");
+          let femaleNum = d3.sum(dataDirector, (d) => d.gender == "f");
+          let maxFilms = d3.max(dataDirector, (d) => d.value);
+
+          var summary = d3
+            .select("p#summary")
             .append("text")
-            .attr(
-              "transform",
-              "translate(" + width / 2 + "," + (0 - margin.top / 4) + ")"
-            )
-            .style("text-anchor", "middle")
             .style("font-size", 17)
-            .text("Reoccurring Actors");
+            .text(
+              "Director " +
+                director +
+                " has " +
+                (maleNum + femaleNum) +
+                " recurring actors, " +
+                maleNum +
+                " male and " +
+                femaleNum +
+                " female. The highest number of actor recurrence is " +
+                maxFilms +
+                " films."
+            );
 
           let tip = d3
             .tip()
@@ -270,7 +294,7 @@
             .attr("cy", (d) => d.y)
             .style("fill", (d) => color(d.value))
             .style("stroke", "lightgrey")
-            .style("stroke-width",0.5)
+            .style("stroke-width", 1)
             .on("mouseover", tip.show)
             .on("mouseout", tip.hide);
         });
@@ -279,7 +303,15 @@
       function chooseColor(column) {
         var color = new Array();
         if ("value" == column) {
-          color = ['#008777', '#67a1d1', '#b6bef6', '#ffe2ff', '#fad3b4', '#f0a68a', '#ec7263'];
+          color = [
+            "#008777",
+            "#67a1d1",
+            "#b6bef6",
+            "#ffdaff",
+            "#fad3b4",
+            "#f0a68a",
+            "#ec7263",
+          ];
         } else if ("gender" == column) {
           color = ["rgb(17, 138, 178)", "rgb(244, 124, 152)"];
         }
