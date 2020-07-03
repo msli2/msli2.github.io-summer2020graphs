@@ -28,9 +28,8 @@
     margin: 0;
     padding: 0;
     border: 0;
-    overflow: hidden;
-    height: 100%; 
-    max-height: 100%; 
+    height: 100%;
+    max-height: 100%;
   }
   .d3tipclass {
     line-height: 1;
@@ -142,8 +141,7 @@
               Gender
             </button>
           </div>
-          <div id="accordion">
-          </div>
+          <div id="accordion"></div>
         </div>
       </div>
       <div id="container" class="svg-container col-md-8"></div>
@@ -184,11 +182,8 @@
 
         cardheaders.sort();
 
-        d3.select("#accordion")
-            .append("div")
-            .classed("card", true)
-            .html(
-              `<div class="card">
+        d3.select("#accordion").append("div").classed("card", true).html(
+          `<div class="card">
               <div
                 class="card-header collapsed card-link"
                 data-toggle="collapse"
@@ -199,20 +194,18 @@
               <div id="collapseOne" class="collapse" data-parent="#accordion">
                 <div class="card-body scroll">
               </div>`
-            )
+        );
 
-          for (var k = 0; k < cardheaders.length; k++) {
-            d3.select(".card-body")
-              .append("div")
-              .html(
-                `<button
+        for (var k = 0; k < cardheaders.length; k++) {
+          d3.select(".card-body").append("div").html(
+            `<button
                     class="col-md-12"
                     onclick="chooseDirector('${cardheaders[k]}')"
                   >
                     ${cardheaders[k]}
                   </button>`
-              );
-          }
+          );
+        }
       });
 
       function chooseDirector(director) {
