@@ -25,6 +25,12 @@
   body {
     font-family: "Times New Roman", Times, serif;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    height: 100%; 
+    max-height: 100%; 
   }
   .d3tipclass {
     line-height: 1;
@@ -137,151 +143,6 @@
             </button>
           </div>
           <div id="accordion">
-            <div class="card">
-              <div
-                class="card-header collapsed card-link"
-                data-toggle="collapse"
-                data-target="#collapseOne"
-              >
-                Female Directors
-              </div>
-              <div id="collapseOne" class="collapse" data-parent="#accordion">
-                <div class="card-body scroll">
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Agnes Varda')"
-                  >
-                    Agnes Varda
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Agnieska Holland')"
-                  >
-                    Agnieska Holland
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Amy Heckerling')"
-                  >
-                    Amy Heckerling
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Anahita Ghazvinizadeh')"
-                  >
-                    Anahita Ghazvinizadeh
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Andrea Arnold')"
-                  >
-                    Andrea Arnold
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Barbara Kopple')"
-                  >
-                    Barbara Kopple
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Barbra Streisand')"
-                  >
-                    Barbra Streisand
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Chantal Akerman')"
-                  >
-                    Chantal Akerman
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Chloe Zhao')"
-                  >
-                    Chloe Zhao
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Claire Denis')"
-                  >
-                    Claire Denis
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Debra Granik')"
-                  >
-                    Debra Granik
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Dorothy Arzner')"
-                  >
-                    Dorothy Arzner
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Greta Gerwig')"
-                  >
-                    Greta Gerwig
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Jane Campion')"
-                  >
-                    Jane Campion
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Julie Dash')"
-                  >
-                    Julie Dash
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Kathryn Bigelow')"
-                  >
-                    Kathryn Bigelow
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Lana Wachowski')"
-                  >
-                    Lana Wachowski
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Lilly Wachowski')"
-                  >
-                    Lilly Wachowski
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Lina Wertmüller')"
-                  >
-                    Lina Wertmüller
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Lois Weber')"
-                  >
-                    Lois Weber
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Mary Harron')"
-                  >
-                    Mary Harron
-                  </button>
-                  <button
-                    class="col-md-12"
-                    onclick="chooseDirector('Mira Nair')"
-                  >
-                    Mira Nair
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -305,6 +166,54 @@
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
       chooseDirector("Agnes Varda");
+
+      d3.csv("actors.csv").then((data) => {
+        var directors = [];
+        directors = data.map(function (d) {
+          return d.director;
+        });
+        var cardheaders = [];
+
+        for (var i = 0; i < directors.length; i++) {
+          if (cardheaders.includes(directors[i])) {
+            continue;
+          } else {
+            cardheaders.push(directors[i]);
+          }
+        }
+
+        cardheaders.sort();
+
+        d3.select("#accordion")
+            .append("div")
+            .classed("card", true)
+            .html(
+              `<div class="card">
+              <div
+                class="card-header collapsed card-link"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+              >
+                Female Directors
+              </div>
+              <div id="collapseOne" class="collapse" data-parent="#accordion">
+                <div class="card-body scroll">
+              </div>`
+            )
+
+          for (var k = 0; k < cardheaders.length; k++) {
+            d3.select(".card-body")
+              .append("div")
+              .html(
+                `<button
+                    class="col-md-12"
+                    onclick="chooseDirector('${cardheaders[k]}')"
+                  >
+                    ${cardheaders[k]}
+                  </button>`
+              );
+          }
+      });
 
       function chooseDirector(director) {
         d3.csv("actors.csv").then(function (data) {
@@ -423,11 +332,11 @@
           ];
           choosenColor = d3.scaleOrdinal(color);
         } else if ("gender" == column) {
-          let malefemale = ["m", "f", ""];
+          let malefemale = ["m", "f"];
           choosenColor = d3
             .scaleOrdinal()
             .domain(malefemale)
-            .range(["rgb(17, 138, 178)", "rgb(244, 124, 152)", "lightgrey"]);
+            .range(["rgb(17, 138, 178)", "rgb(244, 124, 152)"]);
         }
 
         d3.selectAll("circle")

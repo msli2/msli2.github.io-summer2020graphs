@@ -211,11 +211,11 @@ value,actor,director,gender
 2,Alain Delon,Agnes Varda,m
 2,Alan Scott,Agnes Varda,m
 2,Ali Rafie,Agnes Varda,m
-2,André Lubrano,Agnes Varda,
+2,André Lubrano,Agnes Varda,m
 2,Bernard Evein,Agnes Varda,m
-2,Bernard Toublanc-Michel,Agnes Varda,
+2,Bernard Toublanc-Michel,Agnes Varda,m
 2,Bertrand Tavernier,Agnes Varda,m
-2,Bodan Litnanski,Agnes Varda,
+2,Bodan Litnanski,Agnes Varda,m
 2,Daniel Dublet,Agnes Varda,m
 2,Danielle Darrieux,Agnes Varda,f
 2,Delphine Seyrig,Agnes Varda,f
@@ -237,9 +237,9 @@ value,actor,director,gender
 2,Julie Gayet,Agnes Varda,f
 2,Laura Betti,Agnes Varda,f
 2,Louis Aragon,Agnes Varda,m
-2,Mag Bodard,Agnes Varda,
+2,Mag Bodard,Agnes Varda,f
 2,Marie-France Mignal,Agnes Varda,f
-2,Patricia Louisianna Knop,Agnes Varda,
+2,Patricia Louisianna Knop,Agnes Varda,f
 2,Robert De Niro,Agnes Varda,m
 2,Sabine Mamou,Agnes Varda,f
 2,Sami Frey,Agnes Varda,m
@@ -318,7 +318,7 @@ value,actor,director,gender
 2,Kathryn Hahn,Andrea Arnold,f
 3,Natalie Press,Andrea Arnold,f
 2,Alfre Woodard,Barbara Kopple,f
-2,Bill Clinton,Barbara Kopple,
+2,Bill Clinton,Barbara Kopple,m
 2,Carlos Santana,Barbara Kopple,m
 2,Cecilia Peck,Barbara Kopple,f
 2,Dan Rather,Barbara Kopple,m
@@ -329,21 +329,21 @@ value,actor,director,gender
 2,Gregory Peck,Barbara Kopple,m
 2,Janis Joplin,Barbara Kopple,f
 2,Jesse Jackson,Barbara Kopple,m
-2,Jimi Hendrix,Barbara Kopple,
+2,Jimi Hendrix,Barbara Kopple,m
 2,Joe Cocker,Barbara Kopple,m
-2,Joel Rosenman,Barbara Kopple,
+2,Joel Rosenman,Barbara Kopple,m
 2,John Entwistle,Barbara Kopple,m
 2,John Sebastian,Barbara Kopple,m
 2,Keith Moon,Barbara Kopple,m
 2,Kristin Rohde,Barbara Kopple,f
 2,Larry Holmes,Barbara Kopple,m
 2,Lee Tergesen,Barbara Kopple,m
-2,Martin Luther King,Barbara Kopple,
+2,Martin Luther King,Barbara Kopple,m
 2,Martin Scorsese,Barbara Kopple,m
-2,Michael Lang,Barbara Kopple,
+2,Michael Lang,Barbara Kopple,m
 2,Michael Wadleigh,Barbara Kopple,m
 2,Mike Tyson,Barbara Kopple,m
-2,Pat Buchanan,Barbara Kopple,
+2,Pat Buchanan,Barbara Kopple,m
 2,Pete Seeger,Barbara Kopple,m
 2,Pete Townshend,Barbara Kopple,m
 2,Roger Daltrey,Barbara Kopple,m
