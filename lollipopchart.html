@@ -96,15 +96,15 @@
     overflow-y: scroll;
   }
   div#filmTitle {
-    text-align: center;
     font-size: 17px;
+    text-align: center;
     margin-bottom: 20px;
   }
   .graph {
-    margin-top: 10px;
+    margin-top: 30px;
   }
   div#labels {
-    margin-top: 30px;
+    margin-bottom: 20px;
   }
 </style>
 <body>
@@ -153,10 +153,10 @@
           <div id="accordion"></div>
         </div>
       </div>
-      <div class="col-md-8 graph">
+      <div class="col-md-8">
         <div id="filmTitle"></div>
         <div id="labels"></div>
-        <div id="container" class="svg-container"></div>
+        <div id="container" class="svg-container graph"></div>
       </div>
     </div>
   </div>
@@ -295,7 +295,8 @@
               maleNum +
               " male and " +
               femaleNum +
-              " female."
+              " female, throughout her " + 
+              filmCount + " films."
           );
 
         d3.select("div#filmTitle")
