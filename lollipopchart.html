@@ -64,11 +64,11 @@
     font-size: 14px;
   }
   #accordion {
-    margin-top: 10px;
+    margin-top: 20px;
     border: 1px solid lightgrey;
   }
   .scroll {
-    max-height: 400px;
+    max-height: 300px;
     overflow-y: auto;
   }
   .svg-container {
@@ -129,9 +129,26 @@
     Gender Differences Per Director
   </h5>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row" style="padding-left: 15px;">
       <div class="col-md-3">
         <div class="tableOfContents">
+          <div
+            style="border: 1px solid lightgrey; padding: 6px; margin-top: 10px;"
+          >
+            <h6
+              style="
+                padding: 5px;
+                text-align: center;
+                font-size: 17px;
+                font-weight: 550;
+              "
+            >
+              Summary About Director
+            </h6>
+            <div>
+              <p id="summary" style="text-align: center; line-height: 1.2;"></p>
+            </div>
+          </div>
           <div id="accordion"></div>
         </div>
       </div>
@@ -188,6 +205,7 @@
     function choose(director) {
       d3.csv("actorCount.csv").then((data) => {
         d3.selectAll("svg").remove();
+        d3.selectAll("p#summary > text").remove();
 
         dataDirector = data.filter(function (d) {
           return d.director == director;
@@ -236,7 +254,7 @@
             }
             var content =
               "<span style='margin-left: 2.5px;'><b>" +
-              count + 
+              count +
               "</b></span><br>";
             return content;
           });
@@ -259,6 +277,25 @@
             return content;
           });
         svg.call(femalehover);
+
+        let maleNum = d3.sum(dataDirector, (d) => d.maleactors);
+        let femaleNum = d3.sum(dataDirector, (d) => d.femaleactors);
+
+        var summary = d3
+          .select("p#summary")
+          .append("text")
+          .style("font-size", 14)
+          .text(
+            "Director " +
+              director +
+              " has " +
+              (maleNum + femaleNum) +
+              " total actors, " +
+              maleNum +
+              " male and " +
+              femaleNum +
+              " female."
+          );
 
         var xAxisSvg = d3
           .select("#labels")
@@ -356,22 +393,6 @@
           .enter()
           .append("circle")
           .attr("cx", function (d) {
-            return x(d.femaleactors);
-          })
-          .attr("cy", function (d) {
-            return y(d.film);
-          })
-          .attr("r", "7")
-          .style("fill", "rgb(244, 124, 152)")
-          .on("mouseover", femalehover.show)
-          .on("mouseout", femalehover.hide);
-
-        svg
-          .selectAll("circles")
-          .data(dataDirector)
-          .enter()
-          .append("circle")
-          .attr("cx", function (d) {
             return x(d.maleactors);
           })
           .attr("cy", function (d) {
@@ -381,6 +402,22 @@
           .style("fill", "rgb(17, 138, 178)")
           .on("mouseover", malehover.show)
           .on("mouseout", malehover.hide);
+
+        svg
+          .selectAll("circles")
+          .data(dataDirector)
+          .enter()
+          .append("circle")
+          .attr("cx", function (d) {
+            return x(d.femaleactors);
+          })
+          .attr("cy", function (d) {
+            return y(d.film);
+          })
+          .attr("r", "7")
+          .style("fill", "rgb(244, 124, 152)")
+          .on("mouseover", femalehover.show)
+          .on("mouseout", femalehover.hide);
       });
     }
 
