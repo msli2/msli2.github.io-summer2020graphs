@@ -98,6 +98,7 @@
   div#filmTitle {
     text-align: center;
     font-size: 17px;
+    margin-bottom: 20px;
   }
   .graph {
     margin-top: 10px;
@@ -297,6 +298,11 @@
               " female."
           );
 
+        d3.select("div#filmTitle")
+          .style("font-size", 18)
+          .style("font-weight", 550)
+          .text("Director " + director);
+
         var xAxisSvg = d3
           .select("#labels")
           .append("svg")
@@ -304,7 +310,7 @@
           .attr("preserveAspectRatio", "xMinYMin meet")
           .classed("svg-content", true)
           .append("g")
-          .attr("transform", "translate(" + margin.left + "," + 50 + ")");
+          .attr("transform", "translate(" + margin.left + "," + 60 + ")");
 
         xAxisSvg
           .append("text")
@@ -316,11 +322,6 @@
             "translate(" + (0 - margin.left / 2) + "," + 0 + ")"
           )
           .text("Films");
-
-        d3.select("div#filmTitle")
-          .style("font-size", 18)
-          .style("font-weight", 550)
-          .text("Director " + director);
 
         var y = d3
           .scaleBand()
@@ -398,7 +399,7 @@
           .attr("cy", function (d) {
             return y(d.film);
           })
-          .attr("r", "7")
+          .attr("r", "8")
           .style("fill", "rgb(17, 138, 178)")
           .on("mouseover", malehover.show)
           .on("mouseout", malehover.hide);
@@ -414,7 +415,7 @@
           .attr("cy", function (d) {
             return y(d.film);
           })
-          .attr("r", "7")
+          .attr("r", "8")
           .style("fill", "rgb(244, 124, 152)")
           .on("mouseover", femalehover.show)
           .on("mouseout", femalehover.hide);
