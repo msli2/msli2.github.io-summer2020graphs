@@ -94,11 +94,11 @@
   }
   div#label {
     text-align: center;
-    margin-bottom: 40px;
   }
   .graph {
-    margin-top: 80px;
+    margin-top: 70px;
     overflow-y: scroll;
+    margin-bottom: 10px;
   }
 </style>
 <body>
@@ -147,7 +147,7 @@
           <div id="accordion"></div>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8" style="margin-top: 10px;">
         <div id="labels"></div>
         <div id="container" class="svg-container graph"></div>
       </div>
@@ -231,7 +231,7 @@
           .attr("preserveAspectRatio", "xMinYMin meet")
           .classed("svg-content", true)
           .append("g")
-          .attr("transform", "translate(" + margin.left + "," + 30 + ")");
+          .attr("transform", "translate(" + margin.left + "," + 20 + ")");
 
         var svg = d3
           .select("div#container")
@@ -305,7 +305,7 @@
         xAxisSvg
           .append("text")
           .attr("text-anchor", "middle")
-          .style("font-size", 18)
+          .style("font-size", 17)
           .style("font-weight", 550)
           .attr("transform", "translate(" + (width - margin.left + margin.right) / 2 + "," + 0 + ")")
           .text("Director " + director);
@@ -313,11 +313,11 @@
         xAxisSvg
           .append("text")
           .attr("text-anchor", "middle")
-          .style("font-size", 18)
+          .style("font-size", 17)
           .style("font-weight", 550)
           .attr(
             "transform",
-            "translate(" + (0 - margin.left / 2) + "," + 40 + ")"
+            "translate(" + (0 - margin.left / 2) + "," + 30 + ")"
           )
           .text("Films");
 
@@ -366,7 +366,7 @@
           ]);
         xAxisSvg.append("g").call(d3.axisTop(x))          .attr(
             "transform",
-            "translate(" + 0 + "," + 40 + ")"
+            "translate(" + 0 + "," + 30 + ")"
           );
 
         svg
