@@ -15,7 +15,7 @@
     background-color: #212529;
   }
   .navbar .navbar-brand {
-    font-size: 24px;
+    font-size: 22px;
   }
   .navbar a,
   .list-group-item {
@@ -99,8 +99,11 @@
   <nav class="navbar navbar-expand-md">
     <a class="navbar-brand" href="index.html">Summer 2020 Graphs</a>
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Gender Differences</a>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Gender Differences Film</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="lollipopchart.html">Gender Differences Director</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="bubblechart.html">Recurring Actors</a>
@@ -187,18 +190,15 @@
         cardheaders.sort();
 
         d3.select("#accordion").append("div").classed("card", true).html(
-          `<div class="card">
+        `<div class="card">
               <div
-                class="card-header collapsed card-link"
-                data-toggle="collapse"
-                data-target="#collapseOne"
+                class="card-header"
               >
                 Female Directors
               </div>
-              <div id="collapseOne" class="collapse" data-parent="#accordion">
-                <div class="card-body scroll">
+              <div class="card-body scroll">
               </div>`
-        );
+      );
 
         for (var k = 0; k < cardheaders.length; k++) {
           d3.select(".card-body").append("div").html(
@@ -239,7 +239,7 @@
             .append("text")
             .attr("transform", "translate(" + width / 2 + "," + -20 + ")")
             .style("text-anchor", "middle")
-            .style("font-size", 20)
+            .style("font-size", 19)
             .style("font-weight", 550)
             .text("Director " + director);
 
