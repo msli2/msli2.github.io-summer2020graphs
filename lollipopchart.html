@@ -92,19 +92,13 @@
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  div#container {
-    overflow-y: scroll;
-  }
-  div#filmTitle {
-    font-size: 17px;
+  div#label {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   .graph {
-    margin-top: 30px;
-  }
-  div#labels {
-    margin-bottom: 20px;
+    margin-top: 80px;
+    overflow-y: scroll;
   }
 </style>
 <body>
@@ -154,7 +148,6 @@
         </div>
       </div>
       <div class="col-md-8">
-        <div id="filmTitle"></div>
         <div id="labels"></div>
         <div id="container" class="svg-container graph"></div>
       </div>
@@ -231,6 +224,15 @@
         }
         var height = filmCount * value - margin.top - margin.bottom;
 
+        var xAxisSvg = d3
+          .select("div#labels")
+          .append("svg")
+          .attr("viewBox", "0 0 880 100")
+          .attr("preserveAspectRatio", "xMinYMin meet")
+          .classed("svg-content", true)
+          .append("g")
+          .attr("transform", "translate(" + margin.left + "," + 30 + ")");
+
         var svg = d3
           .select("div#container")
           .append("svg")
@@ -285,7 +287,7 @@
         var summary = d3
           .select("p#summary")
           .append("text")
-          .style("font-size", 14)
+          .style("font-size", 16)
           .text(
             "Director " +
               director +
@@ -295,23 +297,18 @@
               maleNum +
               " male and " +
               femaleNum +
-              " female, throughout her " + 
-              filmCount + " films."
+              " female, throughout her " +
+              filmCount +
+              " films."
           );
 
-        d3.select("div#filmTitle")
+        xAxisSvg
+          .append("text")
+          .attr("text-anchor", "middle")
           .style("font-size", 18)
           .style("font-weight", 550)
+          .attr("transform", "translate(" + (width - margin.left + margin.right) / 2 + "," + 0 + ")")
           .text("Director " + director);
-
-        var xAxisSvg = d3
-          .select("#labels")
-          .append("svg")
-          .attr("viewBox", "0 0 880 70")
-          .attr("preserveAspectRatio", "xMinYMin meet")
-          .classed("svg-content", true)
-          .append("g")
-          .attr("transform", "translate(" + margin.left + "," + 60 + ")");
 
         xAxisSvg
           .append("text")
@@ -320,7 +317,7 @@
           .style("font-weight", 550)
           .attr(
             "transform",
-            "translate(" + (0 - margin.left / 2) + "," + 0 + ")"
+            "translate(" + (0 - margin.left / 2) + "," + 40 + ")"
           )
           .text("Films");
 
@@ -367,7 +364,10 @@
               return Math.max(d.maleactors, d.femaleactors);
             }),
           ]);
-        xAxisSvg.append("g").call(d3.axisTop(x));
+        xAxisSvg.append("g").call(d3.axisTop(x))          .attr(
+            "transform",
+            "translate(" + 0 + "," + 40 + ")"
+          );
 
         svg
           .selectAll("lines")
