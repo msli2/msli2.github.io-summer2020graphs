@@ -19,7 +19,7 @@ In Darkness,28.0,15.0,Agnieszka Holland
 Shot in the Heart,50.0,12.0,Agnieszka Holland
 Washington Square,22.0,18.0,Agnieszka Holland
 1983,34.0,16.0,Agnieszka Holland
-The Affair,27.0,23.0,Agnieszka Holland
+The Affair,54.0,46.0,Agnieszka Holland
 The Killing (2011-2012),62.0,38.0,Agnieszka Holland
 Culture,4.0,1.0,Agnieszka Holland
 Mr. Jones,89.0,33.0,Agnieszka Holland
@@ -70,7 +70,7 @@ Trouble Every Day,11.0,15.0,Claire Denis
 High Life,13.0,11.0,Claire Denis
 I Can't Sleep,32.0,19.0,Claire Denis
 Six Degrees,26.0,24.0,Mary Harron
-The L Word,48.0,102.0,Mary Harron
+The L Word,96.0,204.0,Mary Harron
 Anna Nicole,52.0,21.0,Mary Harron
 Big Love,26.0,24.0,Mary Harron
 Charlie Says,28.0,28.0,Mary Harron
@@ -169,7 +169,7 @@ The Carrie Diaries (2013-2014),28.0,22.0,Amy Heckerling
 I Could Never Be Your Woman,36.0,19.0,Amy Heckerling
 Rake,26.0,24.0,Amy Heckerling
 National Lampoon's European Vacation,27.0,20.0,Amy Heckerling
-Fast Times,19.0,5.0,Amy Heckerling
+Fast Times,38.0,10.0,Amy Heckerling
 Getting It Over with,2.0,1.0,Amy Heckerling
 Vamps,30.0,19.0,Amy Heckerling
 Red Oaks (2015-2017),31.0,19.0,Amy Heckerling
@@ -189,7 +189,7 @@ Coming Up,35.0,15.0,Andrea Arnold
 American Honey,19.0,10.0,Andrea Arnold
 Wuthering Heights,14.0,7.0,Andrea Arnold
 Cinema 16 World Short Films,1.0,2.0,Andrea Arnold
-I Love Dick,25.0,25.0,Andrea Arnold
+I Love Dick,50.0,50.0,Andrea Arnold
 Red Road,13.0,13.0,Andrea Arnold
 Milk,2.0,1.0,Andrea Arnold
 Transparent (2015-2017),20.0,30.0,Andrea Arnold
@@ -218,7 +218,7 @@ High School Musical: The Music in You,,2.0,Barbara Kopple
 The Hamptons,11.0,4.0,Barbara Kopple
 American Dream,3.0,,Barbara Kopple
 Shut Up & Sing,37.0,16.0,Barbara Kopple
-We the Economy: 20 Short Films You Can't Afford to Miss,10.0,5.0,Barbara Kopple
+We the Economy: 20 Short Films You Can't Afford to Miss,20.0,10.0,Barbara Kopple
 Vanity Fair: Decades,18.0,22.0,Barbara Kopple
 Havoc,21.0,18.0,Barbara Kopple
 Wild Man Blues,8.0,4.0,Barbara Kopple
@@ -664,7 +664,7 @@ Mudbound,34.0,16.0,Dee Rees
 Orange Bow,5.0,2.0,Dee Rees
 Electric Dreams,28.0,22.0,Dee Rees
 When We Rise,30.0,20.0,Dee Rees
-Walmart: The Box,1.0,1.0,Dee Rees
+Walmart: The Box,5.0,2.0,Dee Rees
 The Women of Brewster Place,20.0,28.0,Donna Deitch
 Crossing Jordan (2001-2007),28.0,22.0,Donna Deitch
 Desert Hearts,14.0,12.0,Donna Deitch
@@ -675,12 +675,12 @@ Army Wives,27.0,23.0,Donna Deitch
 ER,24.0,26.0,Donna Deitch
 Second Noah,30.0,20.0,Donna Deitch
 A Gifted Man,26.0,24.0,Donna Deitch
-Nothing Sacred,33.0,17.0,Donna Deitch
+Nothing Sacred,66.0,34.0,Donna Deitch
 Robin's Hoods,30.0,20.0,Donna Deitch
 Grey's Anatomy,22.0,28.0,Donna Deitch
 Total Security,33.0,17.0,Donna Deitch
 Bones,34.0,16.0,Donna Deitch
-The Glades,31.0,19.0,Donna Deitch
+The Glades,62.0,38.0,Donna Deitch
 Murder One (1995-1997),28.0,22.0,Donna Deitch
 NYPD Blue (1995-2003),34.0,16.0,Donna Deitch
 Wild Card,28.0,22.0,Donna Deitch
@@ -693,11 +693,11 @@ Sexual Advances,6.0,5.0,Donna Deitch
 The $treet (2000-2001),31.0,19.0,Donna Deitch
 Heroes,31.0,19.0,Donna Deitch
 Murder One: Diary of a Serial Killer,39.0,11.0,Donna Deitch
-WIOU,31.0,19.0,Donna Deitch
+WIOU,62.0,38.0,Donna Deitch
 Off the Map,30.0,20.0,Donna Deitch
 South of Nowhere,27.0,23.0,Donna Deitch
 A Change of Place,10.0,8.0,Donna Deitch
-Prison Stories: Women on the Inside,6.0,36.0,Donna Deitch
+Prison Stories: Women on the Inside,9.0,54.0,Donna Deitch
 Greenleaf,25.0,25.0,Donna Deitch
 The Visitor,34.0,16.0,Donna Deitch
 Dellaventura,33.0,17.0,Donna Deitch
@@ -750,7 +750,7 @@ Beyond the Lights,40.0,35.0,Gina Prince-Bythewood
 The Secret Life of Bees,26.0,22.0,Gina Prince-Bythewood
 Great Performers: L.A. Noir,7.0,6.0,Gina Prince-Bythewood
 Cloak & Dagger,34.0,16.0,Gina Prince-Bythewood
-Girlfriends,32.0,18.0,Gina Prince-Bythewood
+Girlfriends,43.0,31.0,Gina Prince-Bythewood
 The Bernie Mac Show,31.0,19.0,Gina Prince-Bythewood
 Reflections,4.0,3.0,Gina Prince-Bythewood
 What's Cooking?,26.0,22.0,Gurinder Chadha
@@ -971,7 +971,7 @@ Gaudi Afternoon,19.0,14.0,Susan Seidelman
 Boynton Beach Club,15.0,21.0,Susan Seidelman
 Confessions of a Suburban Girl,3.0,10.0,Susan Seidelman
 The Dutch Master,9.0,7.0,Susan Seidelman
-Sex and the City,29.0,21.0,Susan Seidelman
+Sex and the City,58.0,42.0,Susan Seidelman
 Early Edition,35.0,15.0,Susan Seidelman
 Musical Chairs,33.0,23.0,Susan Seidelman
 She-Devil,23.0,24.0,Susan Seidelman
@@ -996,3 +996,314 @@ A Tale of Love,1.0,3.0,Trinh T. Minh-ha
 The Fourth Dimension,,1.0,Trinh T. Minh-ha
 Night Passage,6.0,1.0,Trinh T. Minh-ha
 Naked Spaces: Living Is Round,,3.0,Trinh T. Minh-ha
+"Jordan River Anderson, the Messenger",5.0,6.0,Alanis Obomsawin
+Gene Boy Came Home,1.0,,Alanis Obomsawin
+Professor Norman Cornett,,1.0,Alanis Obomsawin
+When All the Leaves Are Gone,2.0,9.0,Alanis Obomsawin
+Is the Crown at War with Us?,3.0,1.0,Alanis Obomsawin
+Poundmaker's Lodge: A Healing Place,5.0,2.0,Alanis Obomsawin
+Incident at Restigouche,2.0,1.0,Alanis Obomsawin
+Walker,6.0,2.0,Alanis Obomsawin
+Kanehsatake: 270 Years of Resistance,8.0,3.0,Alanis Obomsawin
+Sigwan,8.0,2.0,Alanis Obomsawin
+We Can't Make the Same Mistake Twice,,1.0,Alanis Obomsawin
+Rocks at Whiskey Trench,1.0,1.0,Alanis Obomsawin
+Richard Cardinal: Cry from a Diary of a Métis Child,3.0,2.0,Alanis Obomsawin
+Trick or Treaty?,3.0,1.0,Alanis Obomsawin
+Mother of Many Children,,1.0,Alanis Obomsawin
+Southland (2011-2012),30.0,20.0,Allison Anders
+What About Brian,25.0,25.0,Allison Anders
+Cold Case,35.0,15.0,Allison Anders
+Graves,26.0,24.0,Allison Anders
+Proof,26.0,24.0,Allison Anders
+Ring of Fire,23.0,18.0,Allison Anders
+Beaches,10.0,14.0,Allison Anders
+Men in Trees,30.0,20.0,Allison Anders
+Sorry for Your Loss,20.0,30.0,Allison Anders
+Gang Related,37.0,13.0,Allison Anders
+The Divide,32.0,18.0,Allison Anders
+Mi vida loca,36.0,33.0,Allison Anders
+Riverdale,26.0,24.0,Allison Anders
+Strutter,5.0,6.0,Allison Anders
+Things Behind the Sun,26.0,16.0,Allison Anders
+Sugar Town,16.0,19.0,Allison Anders
+In the Echo,3.0,6.0,Allison Anders
+Four Rooms,12.0,18.0,Allison Anders
+Grosse Pointe,26.0,24.0,Allison Anders
+The Mentalist,32.0,18.0,Allison Anders
+Orange Is the New Black,22.0,78.0,Allison Anders
+Grace of My Heart,30.0,36.0,Allison Anders
+Murder in the First (2014-2016),33.0,17.0,Allison Anders
+Sex and the City (1999-2000),29.0,21.0,Allison Anders
+Time After Time,33.0,17.0,Allison Anders
+Mystery Girl,11.0,10.0,Allison Anders
+Gas Food Lodging,19.0,21.0,Allison Anders
+Mayans M.C.,38.0,12.0,Allison Anders
+Border Radio,9.0,5.0,Allison Anders
+TURN: Washington's Spies,82.0,18.0,Allison Anders
+Evidentiary Bodies,,1.0,Barbara Hammer
+Fucking Different New York,14.0,10.0,Barbara Hammer
+Out in South Africa,,1.0,Barbara Hammer
+Resisting Paradise,7.0,9.0,Barbara Hammer
+Nitrate Kisses,4.0,8.0,Barbara Hammer
+Tender Fictions,,1.0,Barbara Hammer
+Dyketactics,,1.0,Barbara Hammer
+Maya Deren's Sink,,1.0,Barbara Hammer
+History Lessons,2.0,5.0,Barbara Hammer
+Sisters!,,1.0,Barbara Hammer
+My Babushka: Searching Ukranian Identities,4.0,15.0,Barbara Hammer
+Devotion: A Film About Ogawa Productions,17.0,12.0,Barbara Hammer
+Lover Other: The Story of Claude Cahun and Marcel Moore,1.0,1.0,Barbara Hammer
+Multiple Orgasm,,1.0,Barbara Hammer
+The Female Closet,,4.0,Barbara Hammer
+Jane Brakhage,,1.0,Barbara Hammer
+Audience,1.0,3.0,Barbara Hammer
+Welcome to this House,,5.0,Barbara Hammer
+Pools,,2.0,Barbara Hammer
+Double Strength,,1.0,Barbara Hammer
+There's a Place,2.0,1.0,Catherine Hardwick
+Miss Bala,30.0,11.0,Catherine Hardwick
+Eyewitness,30.0,20.0,Catherine Hardwick
+Til It Happens to You,9.0,9.0,Catherine Hardwick
+Twilight,32.0,17.0,Catherine Hardwick
+The Black Ghiandola,10.0,6.0,Catherine Hardwick
+Hell on Wheels,42.0,8.0,Catherine Hardwick
+Reckless,31.0,19.0,Catherine Hardwick
+Low Winter Sun,35.0,15.0,Catherine Hardwick
+Eye Candy,26.0,24.0,Catherine Hardwick
+Plush,15.0,12.0,Catherine Hardwick
+Red Riding Hood,26.0,18.0,Catherine Hardwick
+Lords of Dogtown,79.0,27.0,Catherine Hardwick
+The Nativity Story,26.0,18.0,Catherine Hardwick
+The Lost Boys,2.0,3.0,Catherine Hardwick
+Miss You Already,26.0,30.0,Catherine Hardwick
+Thirteen,19.0,19.0,Catherine Hardwick
+This Is Us (2018-2020),26.0,24.0,Catherine Hardwick
+Once and Again (1999-2001),26.0,24.0,Claudia Weill
+Giving Up the Ghost,17.0,10.0,Claudia Weill
+Chicago Hope,24.0,26.0,Claudia Weill
+Caroline in the City,32.0,18.0,Claudia Weill
+A Child Lost Forever: The Jerry Sherwood Story,21.0,17.0,Claudia Weill
+Birdland,29.0,14.0,Claudia Weill
+Johnny Bull,8.0,5.0,Claudia Weill
+Critical Choices,28.0,30.0,Claudia Weill
+Thirtysomething (1987-1989),22.0,28.0,Claudia Weill
+Once a Hero,29.0,10.0,Claudia Weill
+Face of a Stranger,21.0,13.0,Claudia Weill
+My So-Called Life,19.0,31.0,Claudia Weill
+The Twilight Zone,79.0,21.0,Claudia Weill
+Girls,28.0,22.0,Claudia Weill
+The Other Half of the Sky: A China Memoir,,1.0,Claudia Weill
+ABC Afterschool Specials,22.0,28.0,Claudia Weill
+It's My Turn,55.0,9.0,Claudia Weill
+Ramy,31.0,19.0,Desiree Akhavan
+The Miseducation of Cameron Post,36.0,27.0,Desiree Akhavan
+The Slope (2010-2012),4.0,5.0,Desiree Akhavan
+Briarpatch,32.0,18.0,Desiree Akhavan
+Appropriate Behavior,15.0,24.0,Desiree Akhavan
+The Bisexual,24.0,18.0,Desiree Akhavan
+Nose Job,2.0,,Desiree Akhavan
+Climax!,33.0,17.0,Ida Lupino
+Alfred Hitchcock Presents (1960-1961),39.0,11.0,Ida Lupino
+Kraft Suspense Theatre,41.0,9.0,Ida Lupino
+The Virginian,45.0,5.0,Ida Lupino
+The Hitch-Hiker,26.0,3.0,Ida Lupino
+Bewitched,33.0,17.0,Ida Lupino
+Teenage Idol,3.0,3.0,Ida Lupino
+The Untouchables (1962-1963),49.0,1.0,Ida Lupino
+Gilligan's Island (1964-1966),42.0,8.0,Ida Lupino
+Dante,25.0,25.0,Ida Lupino
+Hong Kong,32.0,18.0,Ida Lupino
+On Dangerous Ground,48.0,14.0,Ida Lupino
+The Donna Reed Show,30.0,20.0,Ida Lupino
+The Fugitive (1963-1964),41.0,9.0,Ida Lupino
+Hotel de Paree (1959-1960),44.0,6.0,Ida Lupino
+The Trouble with Angels,5.0,32.0,Ida Lupino
+General Electric Theater (1961-1962),31.0,19.0,Ida Lupino
+The Rogues (1964-1965),35.0,15.0,Ida Lupino
+Screen Directors Playhouse,38.0,12.0,Ida Lupino
+Mr. Adams and Eve,34.0,16.0,Ida Lupino
+The Joseph Cotten Show: On Trial,40.0,10.0,Ida Lupino
+Daniel Boone,48.0,2.0,Ida Lupino
+Dundee and the Culhane,45.0,5.0,Ida Lupino
+The Bigamist,21.0,6.0,Ida Lupino
+Thriller (1961-1962),33.0,17.0,Ida Lupino
+Never Fear,8.0,3.0,Ida Lupino
+Breaking Point,22.0,28.0,Ida Lupino
+The Ghost & Mrs. Muir,36.0,14.0,Ida Lupino
+77 Sunset Strip,31.0,19.0,Ida Lupino
+Dr. Kildare,29.0,21.0,Ida Lupino
+Outrage,22.0,8.0,Ida Lupino
+Sam Benedict (1962-1963),38.0,12.0,Ida Lupino
+Tate,40.0,10.0,Ida Lupino
+Not Wanted,13.0,11.0,Ida Lupino
+Karen,38.0,12.0,Ida Lupino
+The Rifleman,44.0,6.0,Ida Lupino
+"Hard, Fast and Beautiful!",25.0,6.0,Ida Lupino
+Mr. Novak (1963-1965),33.0,17.0,Ida Lupino
+Bob Hope Presents the Chrysler Theatre,43.0,7.0,Ida Lupino
+Frozen Fever,5.0,6.0,Jennifer Lee
+Frozen II,35.0,28.0,Jennifer Lee
+Frozen,40.0,28.0,Jennifer Lee
+Finnegan Begin Again,19.0,10.0,Joan Micklin Silver
+Loverboy,29.0,25.0,Joan Micklin Silver
+The Fur Coat Club,,2.0,Joan Micklin Silver
+Chilly Scenes of Winter,8.0,12.0,Joan Micklin Silver
+Bernice Bobs Her Hair,8.0,6.0,Joan Micklin Silver
+Charms for the Easy Life,27.0,20.0,Joan Micklin Silver
+Crossing Delancey,31.0,34.0,Joan Micklin Silver
+Hester Street,16.0,9.0,Joan Micklin Silver
+Invisible Child,8.0,10.0,Joan Micklin Silver
+A Fish in the Bathtub,28.0,16.0,Joan Micklin Silver
+A Private Matter,31.0,15.0,Joan Micklin Silver
+How to Be a Perfect Person in Just Three Days,12.0,9.0,Joan Micklin Silver
+Hunger Point,14.0,19.0,Joan Micklin Silver
+In the Presence of Mine Enemies,18.0,6.0,Joan Micklin Silver
+Big Girls Don't Cry... They Get Even,25.0,12.0,Joan Micklin Silver
+Between the Lines,22.0,12.0,Joan Micklin Silver
+Sisters,31.0,19.0,Joan Micklin Silver
+The Case of the Elevator Duck,3.0,2.0,Joan Micklin Silver
+The Immigrant Experience: The Long Long Journey,5.0,5.0,Joan Micklin Silver
+Exhibition,4.0,3.0,Joanna Hogg
+Caprice,1.0,1.0,Joanna Hogg
+The Souvenir,30.0,18.0,Joanna Hogg
+The Souvenir: Part II,9.0,7.0,Joanna Hogg
+Network 7,8.0,5.0,Joanna Hogg
+Vicious Circle,1.0,1.0,Joanna Hogg
+Archipelago,4.0,3.0,Joanna Hogg
+Staying Alive,21.0,29.0,Joanna Hogg
+Casualty (1997-1998),25.0,25.0,Joanna Hogg
+London's Burning,31.0,19.0,Joanna Hogg
+EastEnders: Dot's Story,5.0,5.0,Joanna Hogg
+Reach for the Moon,23.0,12.0,Joanna Hogg
+Unrelated,12.0,10.0,Joanna Hogg
+Stop-Loss,69.0,25.0,Kimberly Peirce
+Kidding,28.0,22.0,Kimberly Peirce
+Six (2017-2018),32.0,18.0,Kimberly Peirce
+Manhattan,37.0,13.0,Kimberly Peirce
+Halt and Catch Fire (2015-2016),32.0,18.0,Kimberly Peirce
+Game of Silence,30.0,20.0,Kimberly Peirce
+American Crime,30.0,20.0,Kimberly Peirce
+Dear White People (2018-2019),29.0,21.0,Kimberly Peirce
+The Last Good Breath,1.0,,Kimberly Peirce
+Boys Don't Cry,2.0,4.0,Kimberly Peirce
+Carrie,24.0,31.0,Kimberly Peirce
+Rembrandt en ik,35.0,14.0,Marleen Gorris
+Mrs Dalloway,23.0,20.0,Marleen Gorris
+The Luzhin Defence,16.0,4.0,Marleen Gorris
+Verhalen van de straat,19.0,19.0,Marleen Gorris
+Gebroken spiegels,19.0,15.0,Marleen Gorris
+Within the Whirlwind,32.0,21.0,Marleen Gorris
+Carolina,31.0,25.0,Marleen Gorris
+The Last Island,5.0,2.0,Marleen Gorris
+Antonia's Line,39.0,28.0,Marleen Gorris
+A Question of Silence,17.0,10.0,Marleen Gorris
+De geest van gras,5.0,4.0,Marleen Gorris
+Material Girls,30.0,34.0,Martha Coolidge
+Madam Secretary,29.0,21.0,Martha Coolidge
+Tribute,20.0,11.0,Martha Coolidge
+The Twilight Zone (1985-1987),35.0,15.0,Martha Coolidge
+Lost in Yonkers,15.0,6.0,Martha Coolidge
+Drop Dead Diva,28.0,22.0,Martha Coolidge
+The Night Shift,27.0,23.0,Martha Coolidge
+Bimbo,4.0,,Martha Coolidge
+If These Walls Could Talk 2,5.0,24.0,Martha Coolidge
+Weeds,27.0,23.0,Martha Coolidge
+Hidden Hills,24.0,26.0,Martha Coolidge
+David: Off and On,3.0,2.0,Martha Coolidge
+The Ponder Heart,17.0,12.0,Martha Coolidge
+An American Girl: Chrissa Stands Strong,7.0,15.0,Martha Coolidge
+Out to Sea,41.0,23.0,Martha Coolidge
+Angie,24.0,35.0,Martha Coolidge
+Angie Tribeca,27.0,23.0,Martha Coolidge
+Sledge Hammer!,32.0,18.0,Martha Coolidge
+CBS Summer Playhouse,36.0,14.0,Martha Coolidge
+Joy of Sex,19.0,18.0,Martha Coolidge
+Rambling Rose,16.0,4.0,Martha Coolidge
+Winners,8.0,9.0,Martha Coolidge
+Crazy in Love,15.0,12.0,Martha Coolidge
+The City Girl,9.0,11.0,Martha Coolidge
+The Unknown,25.0,13.0,Martha Coolidge
+I'll Find You,34.0,20.0,Martha Coolidge
+Not a Pretty Picture,6.0,6.0,Martha Coolidge
+Siren,26.0,24.0,Martha Coolidge
+Killer Women,30.0,20.0,Martha Coolidge
+Psych,37.0,13.0,Martha Coolidge
+Leap Years,32.0,18.0,Martha Coolidge
+The Prince and Me,35.0,23.0,Martha Coolidge
+The Twelve Days of Christmas Eve,16.0,9.0,Martha Coolidge
+Three Wishes,60.0,14.0,Martha Coolidge
+Related,27.0,23.0,Martha Coolidge
+Huff,25.0,25.0,Martha Coolidge
+Plain Clothes,32.0,17.0,Martha Coolidge
+Valley Girl,20.0,16.0,Martha Coolidge
+The Flamingo Rising,15.0,8.0,Martha Coolidge
+Real Genius,43.0,22.0,Martha Coolidge
+Girls Club,26.0,22.0,Martha Coolidge
+Shark,35.0,15.0,Martha Coolidge
+Bare Essentials,6.0,5.0,Martha Coolidge
+Trenchcoat in Paradise,13.0,7.0,Martha Coolidge
+The Intern,55.0,67.0,Nancy Meyers
+Something's Gotta Give,27.0,54.0,Nancy Meyers
+What Women Want,25.0,91.0,Nancy Meyers
+It's Complicated,51.0,43.0,Nancy Meyers
+The Holiday,37.0,30.0,Nancy Meyers
+The Parent Trap,20.0,42.0,Nancy Meyers
+L.A. Doctors,29.0,21.0,Nicole Holofcener
+Bored to Death,27.0,23.0,Nicole Holofcener
+Sex and the City (1998-2000),29.0,21.0,Nicole Holofcener
+Leap of Faith,27.0,22.0,Nicole Holofcener
+Inside Amy Schumer,32.0,18.0,Nicole Holofcener
+Unbreakable Kimmy Schmidt,29.0,21.0,Nicole Holofcener
+Lovely & Amazing,20.0,23.0,Nicole Holofcener
+Please Give,21.0,24.0,Nicole Holofcener
+Walking and Talking,13.0,14.0,Nicole Holofcener
+Enlightened (2011-2013),25.0,25.0,Nicole Holofcener
+Cold Feet,21.0,26.0,Nicole Holofcener
+Friends with Money,25.0,20.0,Nicole Holofcener
+Togetherness,25.0,25.0,Nicole Holofcener
+The Land of Steady Habits,18.0,13.0,Nicole Holofcener
+Enough Said,14.0,19.0,Nicole Holofcener
+I Hate That I Love You,2.0,11.0,Nicole Holofcener
+Mrs. Fletcher,31.0,19.0,Nicole Holofcener
+One Mississippi (2015-2016),23.0,27.0,Nicole Holofcener
+Six Feet Under (2003-2004),28.0,22.0,Nicole Holofcener
+Parks and Recreation (2011-2013),33.0,17.0,Nicole Holofcener
+Gilmore Girls,33.0,17.0,Nicole Holofcener
+The Secret of Kells,13.0,6.0,Nora Twomey
+Backwards Boy,1.0,,Nora Twomey
+The Breadwinner,17.0,5.0,Nora Twomey
+Nordic Factory,3.0,1.0,Rungano Nyoni
+I Am Not A Witch,71.0,55.0,Rungano Nyoni
+Africa First: Volume Two,9.0,2.0,Rungano Nyoni
+Listen,3.0,4.0,Rungano Nyoni
+The List,7.0,3.0,Rungano Nyoni
+Twenty Questions,1.0,3.0,Rungano Nyoni
+Dance in the Sun,1.0,1.0,Shirley Clarke
+The Connection,12.0,2.0,Shirley Clarke
+Robert Frost: A Lover's Quarrel with the World,3.0,,Shirley Clarke
+Mysterium,1.0,1.0,Shirley Clarke
+Bullfight,,1.0,Shirley Clarke
+Ornette: Made in America,22.0,3.0,Shirley Clarke
+The Cool World,37.0,10.0,Shirley Clarke
+Portrait of Jason,2.0,1.0,Shirley Clarke
+Brothers,29.0,7.0,Susanne Bier
+Credo,11.0,18.0,Susanne Bier
+Alphaville: Summer Rain,1.0,,Susanne Bier
+Freud Leaving Home,11.0,9.0,Susanne Bier
+Open Hearts,12.0,10.0,Susanne Bier
+Bird Box,29.0,19.0,Susanne Bier
+Like It Never Was Before,11.0,7.0,Susanne Bier
+After the Wedding,20.0,14.0,Susanne Bier
+A Second Chance,32.0,18.0,Susanne Bier
+Letter to Jonas,4.0,3.0,Susanne Bier
+In a Better World,26.0,19.0,Susanne Bier
+The Night Manager,34.0,16.0,Susanne Bier
+Things We Lost in the Fire,22.0,16.0,Susanne Bier
+Once in a Lifetime,37.0,25.0,Susanne Bier
+Songlines,9.0,7.0,Susanne Bier
+The One and Only,9.0,13.0,Susanne Bier
+The Undoing,27.0,23.0,Susanne Bier
+Serena,37.0,11.0,Susanne Bier
+Family Matters,8.0,13.0,Susanne Bier
+Love Is All You Need,12.0,16.0,Susanne Bier

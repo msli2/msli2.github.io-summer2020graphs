@@ -112,7 +112,7 @@
     </ul>
   </nav>
   <h5 style="padding-left: 15px; padding-top: 10px;">
-    Gender Differences Per Media
+    Actor Gender Differences Per Media
   </h5>
   <div class="container-fluid">
     <div class="row" style="padding-left: 15px;">
@@ -203,7 +203,6 @@
         }
 
         cardheaders.sort();
-        console.log(cardheaders.length);
 
         for (var i = 0; i < cardheaders.length - 1; i++) {
           d3.select("#accordion")
@@ -273,8 +272,8 @@
             }
           });
 
-          let malefemale = ["m", "f"];
-          let xCoords = malefemale.map((d, i) => 200 + i * 350);
+          let malefemale = ["m", "f", ""];
+          let xCoords = malefemale.map((d, i) => 200 + i * 200);
           let xScale = d3.scaleOrdinal().domain(malefemale).range(xCoords);
           let yScale = d3
             .scaleLinear()
@@ -283,7 +282,7 @@
           let color = d3
             .scaleOrdinal()
             .domain(malefemale)
-            .range(["rgb(17, 138, 178)", "rgb(244, 124, 152)"]);
+            .range(["rgb(17, 138, 178)", "rgb(244, 124, 152)", "lightgrey"]);
 
           let formatSuffixDecimal2 = d3.format(".2s");
           let maleNum = d3.sum(dataFiltered, (d) => d.gender == "m");
