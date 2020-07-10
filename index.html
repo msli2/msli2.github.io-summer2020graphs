@@ -81,7 +81,7 @@
     display: inline-block;
     position: relative;
     width: 100%;
-    padding-bottom: 100%;
+    padding-bottom: 80%;
     vertical-align: top;
     overflow: hidden;
   }
@@ -112,7 +112,7 @@
     </ul>
   </nav>
   <h5 style="padding-left: 15px; padding-top: 10px;">
-    Gender Differences Per Film
+    Gender Differences Per Media
   </h5>
   <div class="container-fluid">
     <div class="row" style="padding-left: 15px;">
@@ -154,13 +154,13 @@
       // dimensions
       var margin = { top: 40, right: 20, bottom: 40, left: 20 },
         width = 800 - margin.left - margin.right,
-        height = 550 - margin.top - margin.bottom;
+        height = 600 - margin.top - margin.bottom;
 
       var svg = d3
         .select("div#container")
         .append("svg")
         .attr("preserveAspectRatio", "xMinYMin meet")
-        .attr("viewBox", "0 0 800 550")
+        .attr("viewBox", "0 0 800 600")
         .classed("svg-content", true)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -203,6 +203,7 @@
         }
 
         cardheaders.sort();
+        console.log(cardheaders.length);
 
         for (var i = 0; i < cardheaders.length - 1; i++) {
           d3.select("#accordion")
@@ -287,12 +288,18 @@
           let formatSuffixDecimal2 = d3.format(".2s");
           let maleNum = d3.sum(dataFiltered, (d) => d.gender == "m");
           let femaleNum = d3.sum(dataFiltered, (d) => d.gender == "f");
-          let maleFilmratio = 0;
-          let femaleFilmratio = 0;
-          if (maleNum > femaleNum) {
+          let maleFilmratio = 1;
+          let femaleFilmratio = 1;
+          if (maleNum == 0) {
+            maleFilmratio = 0;
+            femaleFilmratio = femaleNum;
+          } else if (femaleNum == 0) {
+            maleFilmratio = maleNum;
+            femaleFilmratio = 0;
+          } else if (maleNum > femaleNum) {
             maleFilmratio = formatSuffixDecimal2(maleNum / femaleNum);
             femaleFilmratio = formatSuffixDecimal2(femaleNum / femaleNum);
-          } else {
+          } else if (femaleNum > maleNum) {
             maleFilmratio = formatSuffixDecimal2(maleNum / maleNum);
             femaleFilmratio = formatSuffixDecimal2(femaleNum / maleNum);
           }
@@ -324,9 +331,9 @@
                 maleNumTotal +
                 " male actors and " +
                 femaleNumTotal +
-                " female actors, creating a total ratio of " +
+                " female actors, creating a ratio of " +
                 maleratio +
-                " male actors : " +
+                " male actors to " +
                 femaleratio +
                 " female actors. "
               );
@@ -339,7 +346,7 @@
             .append("text")
             .attr("transform", "translate(" + width / 2 + "," + 0 + ")")
             .style("text-anchor", "middle")
-            .style("font-size", 18)
+            .style("font-size", 17)
             .style("font-weight", 550)
             .text(function (d) {
               if (d.film == film && count == 0) {
@@ -370,7 +377,10 @@
             .attr("height", 25)
             .style("stroke", "lightgrey")
             .style("stroke-width", 1)
-            .attr("transform", "translate(" + 0 + "," + (height - margin.bottom) + ")");
+            .attr(
+              "transform",
+              "translate(" + 0 + "," + (height - margin.bottom) + ")"
+            );
 
           svg
             .append("rect")
@@ -379,13 +389,20 @@
             .attr("height", 25)
             .style("stroke", "lightgrey")
             .style("stroke-width", 1)
-            .attr("transform", "translate(" + 0 + "," + (height - margin.bottom) + ")");
+            .attr(
+              "transform",
+              "translate(" + 0 + "," + (height - margin.bottom) + ")"
+            );
 
           svg
             .append("text")
             .attr(
               "transform",
-              "translate(" + width / 4 + "," + (height - margin.bottom - 10) + ")"
+              "translate(" +
+                width / 4 +
+                "," +
+                (height - margin.bottom - 10) +
+                ")"
             )
             .style("text-anchor", "middle")
             .style("font-size", 16)
@@ -396,7 +413,11 @@
             .append("text")
             .attr(
               "transform",
-              "translate(" + (3 * width) / 4 + "," + (height - margin.bottom - 10) + ")"
+              "translate(" +
+                (3 * width) / 4 +
+                "," +
+                (height - margin.bottom - 10) +
+                ")"
             )
             .style("text-anchor", "middle")
             .style("font-size", 16)
@@ -407,11 +428,27 @@
             .append("text")
             .attr(
               "transform",
-              "translate(" + width / 2 + "," + (height + margin.bottom / 2) + ")"
+              "translate(" +
+                width / 2 +
+                "," +
+                (height + margin.bottom / 2) +
+                ")"
             )
             .style("text-anchor", "middle")
-            .style("font-size", 16)
-            .text("This film, " + film + " ,has a ratio of " + maleFilmratio + " male actors to " + femaleFilmratio + " female actors.");
+            .text(
+              "This film, " +
+                film +
+                ", has a ratio of " +
+                maleFilmratio +
+                " male actors to " +
+                femaleFilmratio +
+                " female actors."
+            )
+            .style("font-size", function (d) {
+              if (this.getComputedTextLength() >= width - 20) {
+                return 14 + "px";
+              }
+            });
 
           var node = svg.selectAll(".persons").data(dataFiltered);
 

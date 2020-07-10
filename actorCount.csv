@@ -20,7 +20,7 @@ Shot in the Heart,50.0,12.0,Agnieszka Holland
 Washington Square,22.0,18.0,Agnieszka Holland
 1983,34.0,16.0,Agnieszka Holland
 The Affair,27.0,23.0,Agnieszka Holland
-The Killing (2011-2012),31.0,19.0,Agnieszka Holland
+The Killing (2011-2012),62.0,38.0,Agnieszka Holland
 Culture,4.0,1.0,Agnieszka Holland
 Mr. Jones,89.0,33.0,Agnieszka Holland
 Screen Tests,19.0,10.0,Agnieszka Holland
@@ -59,7 +59,7 @@ White Material,22.0,10.0,Claire Denis
 Bastards,16.0,13.0,Claire Denis
 35 Shots of Rum,20.0,11.0,Claire Denis
 Friday Night,15.0,15.0,Claire Denis
-"À propos de Nice, la suite",15.0,6.0,Claire Denis
+"À propos de Nice, la suite",30.0,12.0,Claire Denis
 Beau travail,34.0,9.0,Claire Denis
 "We, France's Undocumented Immigrants",,1.0,Claire Denis
 Chocolat,20.0,8.0,Claire Denis
@@ -70,14 +70,14 @@ Trouble Every Day,11.0,15.0,Claire Denis
 High Life,13.0,11.0,Claire Denis
 I Can't Sleep,32.0,19.0,Claire Denis
 Six Degrees,26.0,24.0,Mary Harron
-The L Word,16.0,34.0,Mary Harron
+The L Word,48.0,102.0,Mary Harron
 Anna Nicole,52.0,21.0,Mary Harron
 Big Love,26.0,24.0,Mary Harron
 Charlie Says,28.0,28.0,Mary Harron
 Oz,86.0,14.0,Mary Harron
 The Nine,28.0,22.0,Mary Harron
 I Shot Andy Warhol,42.0,27.0,Mary Harron
-Six Feet Under,28.0,22.0,Mary Harron
+Six Feet Under,56.0,44.0,Mary Harron
 The Notorious Bettie Page,49.0,17.0,Mary Harron
 Fear Itself,27.0,23.0,Mary Harron
 American Psycho,25.0,24.0,Mary Harron
@@ -203,7 +203,7 @@ This Is Everything: Gigi Gorgeous,13.0,9.0,Barbara Kopple
 A Murder in Mansfield,1.0,,Barbara Kopple
 The D.C. Sniper's Wife: A Barbara Kopple Film,,1.0,Barbara Kopple
 My Generation,40.0,4.0,Barbara Kopple
-American Masters,43.0,7.0,Barbara Kopple
+American Masters,86.0,14.0,Barbara Kopple
 ReMastered: Tricky Dick and the Man in Black,39.0,9.0,Barbara Kopple
 Woodstock: Now & Then,65.0,16.0,Barbara Kopple
 30 for 30,50.0,,Barbara Kopple
@@ -276,7 +276,7 @@ Anybody's Woman,9.0,6.0,Dorothy Arzner
 First Comes Courage,47.0,5.0,Dorothy Arzner
 Paramount on Parade,44.0,32.0,Dorothy Arzner
 The Last of Mrs. Cheyney,20.0,7.0,Dorothy Arzner
-Early Women Filmmakers,,12.0,Dorothy Arzner
+Early Women Filmmakers,,15.0,Dorothy Arzner
 Merrily We Go to Hell,21.0,8.0,Dorothy Arzner
 The Wild Party,9.0,12.0,Dorothy Arzner
 Sarah and Son,8.0,4.0,Dorothy Arzner
@@ -285,7 +285,7 @@ Get Your Man,5.0,4.0,Dorothy Arzner
 Christopher Strong,10.0,8.0,Dorothy Arzner
 The Bride Wore Red,21.0,10.0,Dorothy Arzner
 Honor Among Lovers,15.0,8.0,Dorothy Arzner
-Little Women,71.0,53.0,Greta Gerwig
+Little Women,100.0,85.0,Greta Gerwig
 Lady Bird,34.0,38.0,Greta Gerwig
 Nights and Weekends,3.0,5.0,Greta Gerwig
 Sweetie,23.0,14.0,Jane Campion
@@ -309,7 +309,7 @@ Incognito,7.0,5.0,Julie Dash
 Brothers of the Borderland,8.0,2.0,Julie Dash
 Travel Notes of a Geechee Girl,12.0,8.0,Julie Dash
 Four Women,,1.0,Julie Dash
-Queen Sugar,27.0,23.0,Julie Dash
+Queen Sugar,81.0,69.0,Julie Dash
 Illusions,9.0,7.0,Julie Dash
 Funny Valentines,13.0,17.0,Julie Dash
 The Rosa Parks Story,26.0,26.0,Julie Dash
@@ -349,15 +349,6 @@ Sense8: Creating the World,12.0,9.0,Lana Wachowski
 The Matrix Revolutions,68.0,28.0,Lana Wachowski
 The Matrix Online,18.0,12.0,Lana Wachowski
 Sense8,28.0,22.0,Lilly Wachowski
-The Matrix Revolutions,68.0,28.0,Lilly Wachowski
-Cloud Atlas,82.0,56.0,Lilly Wachowski
-Speed Racer,136.0,46.0,Lilly Wachowski
-The Matrix Online,18.0,12.0,Lilly Wachowski
-The Matrix Reloaded,118.0,38.0,Lilly Wachowski
-Enter the Matrix,136.0,36.0,Lilly Wachowski
-The Matrix: Path of Neo,144.0,44.0,Lilly Wachowski
-Jupiter Ascending,98.0,80.0,Lilly Wachowski
-The Matrix,58.0,22.0,Lilly Wachowski
 The Blue Collar Worker and the Hairdresser in a Whirl of Sex and Politics,7.0,9.0,Lina Wertmüller
 "Roma, Napoli, Venezia... in un crescendo rossiniano",1.0,2.0,Lina Wertmüller
 Let's Talk About Men,5.0,4.0,Lina Wertmüller
@@ -438,7 +429,7 @@ Fine Feathers,2.0,1.0,Lois Weber
 The Clue,2.0,1.0,Lois Weber
 The Rosary,1.0,1.0,Lois Weber
 Through Strife,4.0,1.0,Lois Weber
-Scandal,4.0,5.0,Lois Weber
+Scandal,31.0,28.0,Lois Weber
 Angels Unaware,1.0,1.0,Lois Weber
 When a Girl Loves,4.0,1.0,Lois Weber
 The Peacemaker,2.0,1.0,Lois Weber
@@ -602,3 +593,406 @@ Traps,14.0,21.0,Vera Chytilova
 Vlci bouda,10.0,8.0,Vera Chytilova
 Sasek a královna,10.0,7.0,Vera Chytilova
 Something Different,10.0,6.0,Vera Chytilova
+When They See Us,32.0,18.0,Ava DuVernay
+Jay Z: Family Feud ft. Beyoncé,6.0,16.0,Ava DuVernay
+DMZ,31.0,13.0,Ava DuVernay
+For Justice,25.0,12.0,Ava DuVernay
+TV One Night Only: Live from the Essence Music Festival,10.0,14.0,Ava DuVernay
+This Is the Life,12.0,1.0,Ava DuVernay
+A Wrinkle in Time,26.0,28.0,Ava DuVernay
+My Mic Sounds Nice: A Truth About Women and Hip Hop,2.0,10.0,Ava DuVernay
+The Door,,5.0,Ava DuVernay
+Saturday Night Life,1.0,2.0,Ava DuVernay
+Middle of Nowhere,27.0,19.0,Ava DuVernay
+Essence Presents: Faith in 2010,2.0,3.0,Ava DuVernay
+Selma,95.0,43.0,Ava DuVernay
+August 28th,8.0,4.0,Ava DuVernay
+Nine for IX,5.0,20.0,Ava DuVernay
+I Will Follow,9.0,7.0,Ava DuVernay
+36 fillette,10.0,6.0,Catherine Breillat
+Bluebeard,10.0,11.0,Catherine Breillat
+The Sleeping Beauty,8.0,22.0,Catherine Breillat
+A Real Young Girl,7.0,5.0,Catherine Breillat
+Anatomy of Hell,9.0,5.0,Catherine Breillat
+Romance,27.0,15.0,Catherine Breillat
+Nocturnal Uproar,13.0,8.0,Catherine Breillat
+Venice 70: Future Reloaded,10.0,4.0,Catherine Breillat
+Perfect Love,5.0,10.0,Catherine Breillat
+Si je reste,,1.0,Catherine Breillat
+Abuse of Weakness,22.0,16.0,Catherine Breillat
+Sex Is Comedy,11.0,9.0,Catherine Breillat
+The Last Mistress,20.0,18.0,Catherine Breillat
+Brief Crossing,8.0,3.0,Catherine Breillat
+La fidélité,,1.0,Catherine Breillat
+Dirty Like an Angel,25.0,9.0,Catherine Breillat
+Fat Girl,9.0,7.0,Catherine Breillat
+Portrait of a Lady on Fire,2.0,8.0,Céline Sciamma
+"Les 18 du 57, Boulevard de Strasbourg",,2.0,Céline Sciamma
+Girlhood,15.0,25.0,Céline Sciamma
+Water Lilies,3.0,10.0,Céline Sciamma
+Pauline,,2.0,Céline Sciamma
+Tomboy,4.0,7.0,Céline Sciamma
+Stranger Inside,3.0,27.0,Cheryl Dunye
+She Don't Fade,,3.0,Cheryl Dunye
+Mommy Is Coming,7.0,12.0,Cheryl Dunye
+Vanilla Sex,,1.0,Cheryl Dunye
+Dear White People,29.0,21.0,Cheryl Dunye
+The Fosters,23.0,27.0,Cheryl Dunye
+Greetings from Africa,,4.0,Cheryl Dunye
+All Rise (2019-2020),27.0,23.0,Cheryl Dunye
+My Baby's Daddy,26.0,22.0,Cheryl Dunye
+David Makes Man,29.0,21.0,Cheryl Dunye
+Valencia,6.0,16.0,Cheryl Dunye
+Black Is Blue,4.0,1.0,Cheryl Dunye
+The Village,28.0,22.0,Cheryl Dunye
+Star,26.0,24.0,Cheryl Dunye
+The Watermelon Woman,92.0,146.0,Cheryl Dunye
+Claws,24.0,26.0,Cheryl Dunye
+Queen Sugar (2017-2019),27.0,23.0,Cheryl Dunye
+Lovecraft Country,39.0,11.0,Cheryl Dunye
+The Chi,30.0,20.0,Cheryl Dunye
+The Owls,7.0,14.0,Cheryl Dunye
+Brother from Another Time,2.0,1.0,Cheryl Dunye
+The Last Thing He Wanted,97.0,41.0,Dee Rees
+Space Force,30.0,20.0,Dee Rees
+Colonial Gods,5.0,,Dee Rees
+Empire,25.0,25.0,Dee Rees
+Pariah,1.0,7.0,Dee Rees
+Bessie,71.0,39.0,Dee Rees
+Boys on Film 9: Youth in Trouble,25.0,3.0,Dee Rees
+Mudbound,34.0,16.0,Dee Rees
+Orange Bow,5.0,2.0,Dee Rees
+Electric Dreams,28.0,22.0,Dee Rees
+When We Rise,30.0,20.0,Dee Rees
+Walmart: The Box,1.0,1.0,Dee Rees
+The Women of Brewster Place,20.0,28.0,Donna Deitch
+Crossing Jordan (2001-2007),28.0,22.0,Donna Deitch
+Desert Hearts,14.0,12.0,Donna Deitch
+Moloney,30.0,20.0,Donna Deitch
+C-16: FBI,30.0,20.0,Donna Deitch
+Angel on My Shoulder,,2.0,Donna Deitch
+Army Wives,27.0,23.0,Donna Deitch
+ER,24.0,26.0,Donna Deitch
+Second Noah,30.0,20.0,Donna Deitch
+A Gifted Man,26.0,24.0,Donna Deitch
+Nothing Sacred,33.0,17.0,Donna Deitch
+Robin's Hoods,30.0,20.0,Donna Deitch
+Grey's Anatomy,22.0,28.0,Donna Deitch
+Total Security,33.0,17.0,Donna Deitch
+Bones,34.0,16.0,Donna Deitch
+The Glades,31.0,19.0,Donna Deitch
+Murder One (1995-1997),28.0,22.0,Donna Deitch
+NYPD Blue (1995-2003),34.0,16.0,Donna Deitch
+Wild Card,28.0,22.0,Donna Deitch
+Veronica Clare,31.0,19.0,Donna Deitch
+The Devil's Arithmetic,23.0,27.0,Donna Deitch
+Criminal Passion,15.0,12.0,Donna Deitch
+Judging Amy,27.0,23.0,Donna Deitch
+Dragnet,32.0,18.0,Donna Deitch
+Sexual Advances,6.0,5.0,Donna Deitch
+The $treet (2000-2001),31.0,19.0,Donna Deitch
+Heroes,31.0,19.0,Donna Deitch
+Murder One: Diary of a Serial Killer,39.0,11.0,Donna Deitch
+WIOU,31.0,19.0,Donna Deitch
+Off the Map,30.0,20.0,Donna Deitch
+South of Nowhere,27.0,23.0,Donna Deitch
+A Change of Place,10.0,8.0,Donna Deitch
+Prison Stories: Women on the Inside,6.0,36.0,Donna Deitch
+Greenleaf,25.0,25.0,Donna Deitch
+The Visitor,34.0,16.0,Donna Deitch
+Dellaventura,33.0,17.0,Donna Deitch
+Law & Order: Special Victims Unit (2002-2011),29.0,21.0,Donna Deitch
+Eureka,30.0,20.0,Donna Deitch
+EZ Streets,37.0,13.0,Donna Deitch
+Private Practice (2009-2010),27.0,23.0,Donna Deitch
+Common Ground,35.0,28.0,Donna Deitch
+The Heartbreak Kid,12.0,8.0,Elaine May
+Mikey and Nicky,14.0,8.0,Elaine May
+A New Leaf,14.0,9.0,Elaine May
+Ishtar,50.0,10.0,Elaine May
+A Dry White Season,30.0,10.0,Euzhan Palcy
+The Brides of Bourbon Island,21.0,14.0,Euzhan Palcy
+The Devil's Workshop,2.0,1.0,Euzhan Palcy
+The Killing Yard,21.0,6.0,Euzhan Palcy
+"Aimé Césaire, une voix pour l'histoire",,1.0,Euzhan Palcy
+Sugar Cane Alley,38.0,16.0,Euzhan Palcy
+Parcours de dissidents,1.0,,Euzhan Palcy
+The Wonderful World of Disney,39.0,11.0,Euzhan Palcy
+The House Is Black,1.0,2.0,Forugh Farrokhzad
+My Brilliant Career,17.0,19.0,Gillian Armstrong
+Mrs. Soffel,48.0,20.0,Gillian Armstrong
+Not Fourteen Again,,3.0,Gillian Armstrong
+Charlotte Gray,37.0,13.0,Gillian Armstrong
+Roof Needs Mowing,2.0,2.0,Gillian Armstrong
+High Tide,16.0,12.0,Gillian Armstrong
+Women He's Undressed,19.0,26.0,Gillian Armstrong
+Oscar and Lucinda,56.0,30.0,Gillian Armstrong
+"Bingo, Bridesmaids & Braces",,4.0,Gillian Armstrong
+Hard to Handle: Bob Dylan in Concert,6.0,,Gillian Armstrong
+"Fourteens Good, Eighteens Better",,3.0,Gillian Armstrong
+The Singer and the Dancer,3.0,7.0,Gillian Armstrong
+Death Defying Acts,36.0,17.0,Gillian Armstrong
+The Last Days of Chez Nous,11.0,13.0,Gillian Armstrong
+"Love, Lust & Lies",,3.0,Gillian Armstrong
+Unfolding Florence: The Many Lives of Florence Broadhurst,27.0,29.0,Gillian Armstrong
+Starstruck,38.0,16.0,Gillian Armstrong
+Smokes & Lollies,,3.0,Gillian Armstrong
+One Hundred a Day,,7.0,Gillian Armstrong
+Fires Within,33.0,14.0,Gillian Armstrong
+Everybody Hates Chris,33.0,17.0,Gina Prince-Bythewood
+The Old Guard,24.0,14.0,Gina Prince-Bythewood
+Disappearing Acts,33.0,25.0,Gina Prince-Bythewood
+Love & Basketball,39.0,51.0,Gina Prince-Bythewood
+Bowl of Pork,1.0,,Gina Prince-Bythewood
+CBS Schoolbreak Special,30.0,20.0,Gina Prince-Bythewood
+Shots Fired,70.0,30.0,Gina Prince-Bythewood
+Beyond the Lights,40.0,35.0,Gina Prince-Bythewood
+The Secret Life of Bees,26.0,22.0,Gina Prince-Bythewood
+Great Performers: L.A. Noir,7.0,6.0,Gina Prince-Bythewood
+Cloak & Dagger,34.0,16.0,Gina Prince-Bythewood
+Girlfriends,32.0,18.0,Gina Prince-Bythewood
+The Bernie Mac Show,31.0,19.0,Gina Prince-Bythewood
+Reflections,4.0,3.0,Gina Prince-Bythewood
+What's Cooking?,26.0,22.0,Gurinder Chadha
+It's a Wonderful Afterlife,39.0,12.0,Gurinder Chadha
+Beecham House,19.0,11.0,Gurinder Chadha
+Viceroy's House,53.0,13.0,Gurinder Chadha
+I'm British But...,5.0,2.0,Gurinder Chadha
+Bend It Like Beckham,25.0,30.0,Gurinder Chadha
+"Paris, je t'aime",44.0,41.0,Gurinder Chadha
+Bhaji on the Beach,25.0,17.0,Gurinder Chadha
+Blinded by the Light,53.0,21.0,Gurinder Chadha
+Bride & Prejudice,16.0,17.0,Gurinder Chadha
+A Nice Arrangement,5.0,6.0,Gurinder Chadha
+"Angus, Thongs and Perfect Snogging",20.0,20.0,Gurinder Chadha
+Rich Deceiver,17.0,18.0,Gurinder Chadha
+Hotheads,,2.0,Jennie Livingston
+Pose,23.0,27.0,Jennie Livingston
+Who's the Top?,3.0,7.0,Jennie Livingston
+Paris Is Burning,13.0,14.0,Jennie Livingston
+The Babadook,18.0,20.0,Jennifer Kent
+Monster,28.0,14.0,Jennifer Kent
+How the 'Dook Stole Christmas,2.0,,Jennifer Kent
+The Nightingale,129.0,26.0,Jennifer Kent
+Two Twisted,33.0,17.0,Jennifer Kent
+The Outsider,30.0,20.0,Karyn Kusama
+Æon Flux,37.0,25.0,Karyn Kusama
+Billions (2016-2017),36.0,14.0,Karyn Kusama
+The Man in the High Castle (2015-2016),37.0,13.0,Karyn Kusama
+Halt and Catch Fire (2014-2017),32.0,18.0,Karyn Kusama
+Girlfight,45.0,12.0,Karyn Kusama
+The Invitation,9.0,7.0,Karyn Kusama
+XX,18.0,18.0,Karyn Kusama
+Casual,40.0,60.0,Karyn Kusama
+Masters of Sex,27.0,23.0,Karyn Kusama
+Chicago Fire,31.0,19.0,Karyn Kusama
+Jennifer's Body,32.0,38.0,Karyn Kusama
+Destroyer,30.0,13.0,Karyn Kusama
+Speechless,8.0,2.0,Karyn Kusama
+Self Made: Inspired by the Life of Madam C.J. Walker,22.0,28.0,Kasi Lemmons
+Luke Cage,33.0,17.0,Kasi Lemmons
+The Caveman's Valentine,39.0,11.0,Kasi Lemmons
+Black Nativity,56.0,36.0,Kasi Lemmons
+Eve's Bayou,11.0,18.0,Kasi Lemmons
+Dr. Hugo,2.0,5.0,Kasi Lemmons
+Harriet,70.0,29.0,Kasi Lemmons
+The Cruz Brothers and Miss Malloy,7.0,6.0,Kathleen Collins II
+Losing Ground,10.0,8.0,Kathleen Collins II
+Ode,7.0,3.0,Kelly Reichardt
+Meek's Cutoff,6.0,3.0,Kelly Reichardt
+Night Moves,28.0,10.0,Kelly Reichardt
+First Cow,24.0,2.0,Kelly Reichardt
+Wendy and Lucy,25.0,13.0,Kelly Reichardt
+Certain Women,10.0,11.0,Kelly Reichardt
+Old Joy,5.0,7.0,Kelly Reichardt
+River of Grass,32.0,12.0,Kelly Reichardt
+Innocent Until Proven Guilty,1.0,,Kirsten Johnson
+Dick Johnson Is Dead,1.0,3.0,Kirsten Johnson
+Deadline,24.0,5.0,Kirsten Johnson
+Cameraperson,2.0,1.0,Kirsten Johnson
+Field of Vision,7.0,1.0,Kirsten Johnson
+Here and Now,26.0,24.0,Lisa Cholodenko
+High Art,7.0,11.0,Lisa Cholodenko
+Hung,24.0,26.0,Lisa Cholodenko
+"Push, Nevada",39.0,11.0,Lisa Cholodenko
+Cavedweller,16.0,20.0,Lisa Cholodenko
+Olive Kitteridge,24.0,26.0,Lisa Cholodenko
+Homicide: Life on the Street,33.0,17.0,Lisa Cholodenko
+The Slap,27.0,23.0,Lisa Cholodenko
+Souvenir,,3.0,Lisa Cholodenko
+Unbelievable,26.0,24.0,Lisa Cholodenko
+The Kids Are All Right,11.0,10.0,Lisa Cholodenko
+Laurel Canyon,23.0,17.0,Lisa Cholodenko
+Magazine for Fai,9.0,7.0,Lucrecia Martel
+Julieta Laso: Fantasmas,,3.0,Lucrecia Martel
+No te la llevarás maldito,2.0,1.0,Lucrecia Martel
+Muta,,9.0,Lucrecia Martel
+Zama,39.0,17.0,Lucrecia Martel
+Historias Breves 1,36.0,9.0,Lucrecia Martel
+New Argirópolis,34.0,24.0,Lucrecia Martel
+The Empty Classroom,1.0,1.0,Lucrecia Martel
+Las dependencias,5.0,2.0,Lucrecia Martel
+La ciudad que huye,,2.0,Lucrecia Martel
+Dead King,3.0,1.0,Lucrecia Martel
+The Holy Girl,23.0,18.0,Lucrecia Martel
+La otra,4.0,,Lucrecia Martel
+Leguas,9.0,9.0,Lucrecia Martel
+La Ciénaga,7.0,8.0,Lucrecia Martel
+"25 miradas, 200 minutos",32.0,18.0,Lucrecia Martel
+Pescados,,1.0,Lucrecia Martel
+The Headless Woman,4.0,6.0,Lucrecia Martel
+Mabel's Strange Predicament,8.0,3.0,Mabel Normand
+Mabel's Bear Escape,1.0,1.0,Mabel Normand
+Mabel and Fatty Viewing the World's Fair at San Francisco,2.0,2.0,Mabel Normand
+Mabel's Nerve,2.0,1.0,Mabel Normand
+Caught in a Cabaret,19.0,7.0,Mabel Normand
+Mabel's Stormy Love Affair,1.0,1.0,Mabel Normand
+Won in a Closet,8.0,2.0,Mabel Normand
+Mabel at the Wheel,17.0,4.0,Mabel Normand
+Love and Gasoline,1.0,2.0,Mabel Normand
+A Beautiful Day in the Neighborhood,59.0,36.0,Marielle Heller
+The Diary of a Teenage Girl,38.0,25.0,Marielle Heller
+Can You Ever Forgive Me?,35.0,28.0,Marielle Heller
+Transparent,20.0,30.0,Marielle Heller
+Galveston,35.0,15.0,Mélanie Laurent
+Tomorrow,15.0,8.0,Mélanie Laurent
+X Femmes,19.0,31.0,Mélanie Laurent
+Breathe,11.0,15.0,Mélanie Laurent
+Diving,26.0,16.0,Mélanie Laurent
+The Adopted,13.0,12.0,Mélanie Laurent
+De moins en moins,3.0,2.0,Mélanie Laurent
+Surpêche,,1.0,Mélanie Laurent
+Another Country,15.0,19.0,Niki Caro
+Whale Rider,15.0,11.0,Niki Caro
+"McFarland, USA",70.0,27.0,Niki Caro
+Dark Stories: Tales from Beyond the Grave,1.0,,Niki Caro
+Memory & Desire,13.0,6.0,Niki Caro
+42 One Dream Rush,4.0,7.0,Niki Caro
+A Heavenly Vintage,19.0,10.0,Niki Caro
+Mulan,38.0,13.0,Niki Caro
+Juanes: Juntos,1.0,,Niki Caro
+North Country,52.0,20.0,Niki Caro
+Anne with an E,23.0,27.0,Niki Caro
+Mercy Peak,29.0,21.0,Niki Caro
+The Zookeeper's Wife,41.0,23.0,Niki Caro
+Real Women Have Curves,11.0,17.0,Patricia Cardoso
+Deep Blue Breath,4.0,3.0,Patricia Cardoso
+Lies in Plain Sight,12.0,12.0,Patricia Cardoso
+Meddling Mom,7.0,5.0,Patricia Cardoso
+Tales of the City,24.0,26.0,Patricia Cardoso
+Party of Five,18.0,32.0,Patricia Cardoso
+Ro,6.0,2.0,Patricia Cardoso
+La Clave,,2.0,Patricia Cardoso
+All Rise,27.0,23.0,Patricia Cardoso
+In the Dark,27.0,23.0,Patricia Cardoso
+The Society,29.0,21.0,Patricia Cardoso
+Emergence,29.0,21.0,Patricia Cardoso
+El Paseo De Teresa,10.0,3.0,Patricia Cardoso
+Wonder Woman 1984,122.0,69.0,Patty Jenkins
+Velocity Rules,4.0,4.0,Patty Jenkins
+I Am the Night,32.0,18.0,Patty Jenkins
+Betrayal,28.0,22.0,Patty Jenkins
+Wonder Woman,111.0,73.0,Patty Jenkins
+Entourage,28.0,22.0,Patty Jenkins
+Just Drive,3.0,,Patty Jenkins
+Arrested Development,32.0,18.0,Patty Jenkins
+Exposed,27.0,17.0,Patty Jenkins
+Five,44.0,58.0,Patty Jenkins
+Epilogue: Etta's Mission,3.0,1.0,Patty Jenkins
+Megadeth: No More Mr. Nice Guy,3.0,,Penelope Spheeris
+Senseless,44.0,15.0,Penelope Spheeris
+Uncle Tom's Fairy Tales,2.0,,Penelope Spheeris
+Danger Theatre,35.0,15.0,Penelope Spheeris
+Suburbia,66.0,23.0,Penelope Spheeris
+The Decline of Western Civilization Part III,11.0,1.0,Penelope Spheeris
+Dudes,25.0,8.0,Penelope Spheeris
+The Decline of Western Civilization Part II: The Metal Years,62.0,55.0,Penelope Spheeris
+Cracking Up,23.0,27.0,Penelope Spheeris
+The Beverly Hillbillies,50.0,30.0,Penelope Spheeris
+Hollywood Vice Squad,26.0,18.0,Penelope Spheeris
+Bonfire: Sword & Stone,5.0,,Penelope Spheeris
+The Kid & I,18.0,19.0,Penelope Spheeris
+We Sold Our Souls for Rock 'n Roll,35.0,2.0,Penelope Spheeris
+Dear Doughboy,3.0,,Penelope Spheeris
+Balls to the Wall,35.0,25.0,Penelope Spheeris
+UFO Abductions,3.0,,Penelope Spheeris
+The Boys Next Door,31.0,18.0,Penelope Spheeris
+Wayne's World,42.0,11.0,Penelope Spheeris
+Thunder and Mud,4.0,6.0,Penelope Spheeris
+Hollywierd,10.0,5.0,Penelope Spheeris
+Rap's Most Wanted,2.0,,Penelope Spheeris
+Black Sheep,35.0,13.0,Penelope Spheeris
+Night Ranger: I Did It for Love,5.0,,Penelope Spheeris
+Visitors from the Unknown,30.0,4.0,Penelope Spheeris
+The Crooked E: The Unshredded Truth About Enron,29.0,10.0,Penelope Spheeris
+The Little Rascals,40.0,16.0,Penelope Spheeris
+I Don't Know,3.0,1.0,Penelope Spheeris
+The Real St. Nick,12.0,5.0,Penelope Spheeris
+"Queen: Bohemian Rhapsody, Wayne's World Version",7.0,,Penelope Spheeris
+Megadeth: In My Darkest Hour,5.0,,Penelope Spheeris
+The Decline of Western Civilization,45.0,13.0,Penelope Spheeris
+Megadeth: Wake Up Dead,5.0,,Penelope Spheeris
+Women Filmmakers in Russia,,5.0,Sally Potter
+The Party,3.0,4.0,Sally Potter
+The Tango Lesson,29.0,16.0,Sally Potter
+The London Story,5.0,1.0,Sally Potter
+The Man Who Cried,42.0,27.0,Sally Potter
+Orlando,33.0,12.0,Sally Potter
+The Roads Not Taken,12.0,13.0,Sally Potter
+Thriller,2.0,2.0,Sally Potter
+Ginger & Rosa,22.0,12.0,Sally Potter
+The Gold Diggers,6.0,10.0,Sally Potter
+Rage,10.0,4.0,Sally Potter
+Yes,11.0,12.0,Sally Potter
+"Tears, Laughter, Fears and Rage",5.0,3.0,Sally Potter
+Stories We Tell,20.0,19.0,Sarah Polley
+Away from Her,7.0,19.0,Sarah Polley
+All I Want for Christmas,,2.0,Sarah Polley
+The Shields Stories,18.0,7.0,Sarah Polley
+Take This Waltz,17.0,14.0,Sarah Polley
+Hey Lady!,11.0,6.0,Sarah Polley
+Don't Think Twice,2.0,2.0,Sarah Polley
+I Shout Love,2.0,1.0,Sarah Polley
+Hide and Seek,11.0,30.0,Su Friendrich
+The Ties That Bind,1.0,,Su Friendrich
+Seeing Red,,1.0,Su Friendrich
+Rules of the Road,,1.0,Su Friendrich
+Sink or Swim,,1.0,Su Friendrich
+Damned If You Don't,1.0,2.0,Su Friendrich
+I Cannot Tell You How I Feel,1.0,3.0,Su Friendrich
+A Cooler Climate,18.0,13.0,Susan Seidelman
+Smithereens,15.0,14.0,Susan Seidelman
+Stella,26.0,24.0,Susan Seidelman
+Making Mr. Right,34.0,18.0,Susan Seidelman
+Power and Beauty,33.0,13.0,Susan Seidelman
+"Yours Truly, Andrea G. Stern",4.0,5.0,Susan Seidelman
+The Ranch,20.0,23.0,Susan Seidelman
+Gaudi Afternoon,19.0,14.0,Susan Seidelman
+Boynton Beach Club,15.0,21.0,Susan Seidelman
+Confessions of a Suburban Girl,3.0,10.0,Susan Seidelman
+The Dutch Master,9.0,7.0,Susan Seidelman
+Sex and the City,29.0,21.0,Susan Seidelman
+Early Edition,35.0,15.0,Susan Seidelman
+Musical Chairs,33.0,23.0,Susan Seidelman
+She-Devil,23.0,24.0,Susan Seidelman
+Cookie,49.0,14.0,Susan Seidelman
+Tales of Erotica,12.0,7.0,Susan Seidelman
+Desperately Seeking Susan,47.0,22.0,Susan Seidelman
+The Electric Company (2009-2010),35.0,15.0,Susan Seidelman
+Cut in Half,1.0,4.0,Susan Seidelman
+Madonna: Into the Groove,2.0,2.0,Susan Seidelman
+And You Act Like One Too,5.0,2.0,Susan Seidelman
+The Barefoot Executive,24.0,14.0,Susan Seidelman
+Madonna: Celebration - The Video Collection,65.0,21.0,Susan Seidelman
+The Hot Flashes,31.0,27.0,Susan Seidelman
+Now and Again,38.0,12.0,Susan Seidelman
+Slums of Beverly Hills,13.0,11.0,Tamara Jenkins
+Family Remains,2.0,3.0,Tamara Jenkins
+Shooting Gallery,3.0,5.0,Tamara Jenkins
+Private Life,17.0,33.0,Tamara Jenkins
+"Choices: The Good, the Bad, the Ugly",2.0,1.0,Tamara Jenkins
+The Savages,17.0,27.0,Tamara Jenkins
+A Tale of Love,1.0,3.0,Trinh T. Minh-ha
+The Fourth Dimension,,1.0,Trinh T. Minh-ha
+Night Passage,6.0,1.0,Trinh T. Minh-ha
+Naked Spaces: Living Is Round,,3.0,Trinh T. Minh-ha
