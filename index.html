@@ -272,8 +272,8 @@
             }
           });
 
-          let malefemale = ["m", "f", ""];
-          let xCoords = malefemale.map((d, i) => 200 + i * 200);
+          let malefemale = ["m", "f"];
+          let xCoords = malefemale.map((d, i) => 200 + i * 350);
           let xScale = d3.scaleOrdinal().domain(malefemale).range(xCoords);
           let yScale = d3
             .scaleLinear()
@@ -282,7 +282,7 @@
           let color = d3
             .scaleOrdinal()
             .domain(malefemale)
-            .range(["rgb(17, 138, 178)", "rgb(244, 124, 152)", "lightgrey"]);
+            .range(["rgb(17, 138, 178)", "rgb(244, 124, 152)"]);
 
           let formatSuffixDecimal2 = d3.format(".2s");
           let maleNum = d3.sum(dataFiltered, (d) => d.gender == "m");
