@@ -114,13 +114,20 @@
         <a class="nav-link" href="index.html">Gender Differences Director</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="GenderDifferencesFilm.html">Gender Differences Film</a>
+        <a class="nav-link" href="GenderDifferencesFilm.html"
+          >Gender Differences Film</a
+        >
       </li>
       <li class="nav-item">
         <a class="nav-link" href="RecurringActors.html">Recurring Actors</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="ActorDirectorRelations.html">Actor Director Relations</a>
+        <a class="nav-link" href="ActorDirectorRelations.html"
+          >Actor Director Relations</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="ActorTimelines.html">Actor Timelines</a>
       </li>
     </ul>
   </nav>
@@ -293,9 +300,9 @@
           .text(
             "Director " +
               director +
-              " has " +
+              " has worked with " +
               (maleNum + femaleNum) +
-              " total actors, " +
+              " unique and reoccuring actors, " +
               maleNum +
               " male and " +
               femaleNum +
@@ -381,7 +388,7 @@
           .attr("transform", "translate(" + 0 + "," + 40 + ")")
           .selectAll("text")
           .style("font-size", "12")
-          .style('font-family', "Times New Roman");
+          .style("font-family", "Times New Roman");
 
         svg
           .selectAll("lines")

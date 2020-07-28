@@ -98,13 +98,20 @@
       <a class="nav-link" href="index.html">Gender Differences Director</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="GenderDifferencesFilm.html">Gender Differences Film</a>
+      <a class="nav-link" href="GenderDifferencesFilm.html"
+        >Gender Differences Film</a
+      >
     </li>
     <li class="nav-item">
       <a class="nav-link" href="RecurringActors.html">Recurring Actors</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="ActorDirectorRelations.html">Actor Director Relations</a>
+      <a class="nav-link" href="ActorDirectorRelations.html"
+        >Actor Director Relations</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="ActorTimelines.html">Actor Timelines</a>
     </li>
   </ul>
 </nav>
@@ -114,35 +121,29 @@
 <div class="container-fluid">
   <div class="row" style="padding-left: 15px;">
     <div class="col-md-3">
-        <div
+      <div style="border: 1px solid lightgrey; padding: 6px; margin-top: 10px;">
+        <h6
           style="
-            border: 1px solid lightgrey;
-            padding: 6px;
-            margin-top: 10px;
+            margin: 5px;
+            text-align: center;
+            font-size: 17px;
+            font-weight: 550;
           "
         >
-          <h6
-            style="
-              margin: 5px;
-              text-align: center;
-              font-size: 17px;
-              font-weight: 550;
-            "
-          >
-            Summary
-          </h6>
-          <div>
-            <p id="summary" style="text-align: center; line-height: 1.2;"></p>
-          </div>
+          Summary
+        </h6>
+        <div>
+          <p id="summary" style="text-align: center; line-height: 1.2;"></p>
         </div>
-        <input
-          class="form-control"
-          id="myInput"
-          type="text"
-          placeholder="Search.."
-          style="margin-top: 15px;"
-        />
-        <div id="accordion"></div>
+      </div>
+      <input
+        class="form-control"
+        id="myInput"
+        type="text"
+        placeholder="Search.."
+        style="margin-top: 15px;"
+      />
+      <div id="accordion"></div>
     </div>
     <div id="container" class="svg-container col-md-4"></div>
     <div id="containerTwo" class="svg-container col-md-4"></div>
@@ -241,15 +242,26 @@
         .force("charge", d3.forceManyBody().strength(-300))
         .force("center", d3.forceCenter(width / 2, height / 2));
 
+      let formatSuffixDecimal2 = d3.format(".2s");
       let maleNum = d3.sum(data.nodes, (d) => d.group == "m");
       let femaleNum = d3.sum(data.nodes, (d) => d.group == "f");
       let directorNum = d3.sum(data.nodes, (d) => d.group == "d");
+      let maleratio = formatSuffixDecimal2(maleNum / femaleNum);;
+      let femaleratio = formatSuffixDecimal2(femaleNum / femaleNum);
 
       d3.select("p#summary")
         .append("text")
         .style("text-anchor", "middle")
         .style("font-size", 20)
-        .text("With " + directorNum + " different female directors, " + maleNum + " male actors and " + femaleNum + " female actors have worked with more than one female director.")
+        .text(
+          "With " +
+            directorNum +
+            " different female directors, " +
+            maleNum +
+            " male unique actors and " +
+            femaleNum +
+            " female unique actors have worked with more than one female director, a " + maleratio + " to " + femaleratio + " ratio."
+        )
         .attr(
           "transform",
           "translate(" +
@@ -286,14 +298,7 @@
         .style("text-anchor", "middle")
         .style("font-size", 18)
         .text("Female Directors " + actor + " Worked With")
-        .attr(
-          "transform",
-          "translate(" +
-            (width) / 2 +
-            "," +
-            margin.right +
-            ")"
-        );
+        .attr("transform", "translate(" + width / 2 + "," + margin.right + ")");
 
       let color = d3
         .scaleOrdinal()
@@ -330,15 +335,6 @@
             .on("drag", dragged)
             .on("end", dragended)
         );
-
-      var directorsforactor = [];
-      data.nodes.forEach(function (d) {
-        if (!directorsforactor.includes(d.id) && d.group == "d") {
-          directorsforactor.push(d.id);
-        }
-      });
-
-      directorsforactor.sort();
 
       var labels = node
         .append("text")
@@ -440,11 +436,7 @@
         .text("The Corresponding Media " + actor + " Acted In")
         .attr(
           "transform",
-          "translate(" +
-            (width2) / 2 +
-            "," +
-            margin2.right +
-            ")"
+          "translate(" + width2 / 2 + "," + margin2.right + ")"
         );
 
       let color = d3

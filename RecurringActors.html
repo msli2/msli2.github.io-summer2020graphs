@@ -113,6 +113,9 @@
       <li class="nav-item">
         <a class="nav-link" href="ActorDirectorRelations.html">Actor Director Relations</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="ActorTimelines.html">Actor Timelines</a>
+      </li>
     </ul>
   </nav>
   <h5 style="padding-left: 15px; padding-top: 10px;">
@@ -248,9 +251,25 @@
             .style("font-weight", 550)
             .text("Director " + director);
 
+          let formatSuffixDecimal2 = d3.format(".2s");
           let maleNum = d3.sum(dataDirector, (d) => d.gender == "m");
           let femaleNum = d3.sum(dataDirector, (d) => d.gender == "f");
           var maxFilms = d3.max(dataDirector.map((d) => d.value));
+          let maleratio = 0;
+          let femaleratio = 0;
+          if (maleNum == 0) {
+            maleratio = 0;
+            femaleratio = femaleNum;
+          } else if (femaleNum == 0) {
+            maleratio = maleNum;
+            femaleratio = 0;
+          } else if (maleNum > femaleNum) {
+            maleratio = formatSuffixDecimal2(maleNum / femaleNum);
+            femaleratio = formatSuffixDecimal2(femaleNum / femaleNum);
+          } else {
+            maleratio = formatSuffixDecimal2(maleNum / maleNum);
+            femaleratio = formatSuffixDecimal2(femaleNum / maleNum);
+          }
 
           var summary = d3
             .select("p#summary")
@@ -265,7 +284,9 @@
                 maleNum +
                 " male and " +
                 femaleNum +
-                " female. The highest number of actor recurrence is " +
+                " female. This results in a " +
+                maleratio + " to " + femaleratio +
+                " ratio. The highest number of actor recurrences is " +
                 maxFilms +
                 " films."
             );

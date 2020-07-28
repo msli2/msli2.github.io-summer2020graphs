@@ -113,6 +113,9 @@
       <li class="nav-item">
         <a class="nav-link" href="ActorDirectorRelations.html">Actor Director Relations</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="ActorTimelines.html">Actor Timelines</a>
+      </li>
     </ul>
   </nav>
   <h5 style="padding-left: 15px; padding-top: 10px;">
@@ -291,6 +294,7 @@
           let formatSuffixDecimal2 = d3.format(".2s");
           let maleNum = d3.sum(dataFiltered, (d) => d.gender == "m");
           let femaleNum = d3.sum(dataFiltered, (d) => d.gender == "f");
+
           let maleFilmratio = 1;
           let femaleFilmratio = 1;
           if (maleNum == 0) {
@@ -310,8 +314,18 @@
           let count1 = 0;
           let count2 = 0;
           let count3 = 0;
-          let maleNumTotal = d3.sum(dataDirector, (d) => d.gender == "m");
-          let femaleNumTotal = d3.sum(dataDirector, (d) => d.gender == "f");
+          var maleactors = [];
+          var femaleactors = [];
+          dataDirector.forEach(function (d) {
+            if (!maleactors.includes(d.actor) && d.gender == "m") {
+              maleactors.push(d.actor);
+            }
+            if (!femaleactors.includes(d.actor) && d.gender == "f") {
+              femaleactors.push(d.actor);
+            }
+          });
+          let maleNumTotal = maleactors.length;
+          let femaleNumTotal = femaleactors.length;
           let maleratio = 0;
           let femaleratio = 0;
           if (maleNumTotal > femaleNumTotal) {
@@ -330,11 +344,11 @@
               return (
                 "Director " +
                 director +
-                " has a total of " +
+                " has worked with " + 
                 maleNumTotal +
-                " male actors and " +
+                " male unique actors and " +
                 femaleNumTotal +
-                " female actors, creating a ratio of " +
+                " female unique actors, creating a total ratio of " +
                 maleratio +
                 " male actors to " +
                 femaleratio +
