@@ -246,7 +246,7 @@
       let maleNum = d3.sum(data.nodes, (d) => d.group == "m");
       let femaleNum = d3.sum(data.nodes, (d) => d.group == "f");
       let directorNum = d3.sum(data.nodes, (d) => d.group == "d");
-      let maleratio = formatSuffixDecimal2(maleNum / femaleNum);;
+      let maleratio = formatSuffixDecimal2(maleNum / femaleNum);
       let femaleratio = formatSuffixDecimal2(femaleNum / femaleNum);
 
       d3.select("p#summary")
@@ -260,7 +260,11 @@
             maleNum +
             " male unique actors and " +
             femaleNum +
-            " female unique actors have worked with more than one female director, a " + maleratio + " to " + femaleratio + " ratio."
+            " female unique actors have worked with more than one female director, a " +
+            maleratio +
+            " to " +
+            femaleratio +
+            " ratio."
         )
         .attr(
           "transform",
@@ -434,10 +438,13 @@
         .style("text-anchor", "middle")
         .style("font-size", 18)
         .text("The Corresponding Media " + actor + " Acted In")
-        .attr(
-          "transform",
-          "translate(" + width2 / 2 + "," + margin2.right + ")"
-        );
+        .attr("y", function (d) {
+          return margin.top / 2;
+        })
+        .attr("x", function (d) {
+          return width2 / 2;
+        })
+        .call(wrap, width2);
 
       let color = d3
         .scaleOrdinal()
@@ -483,7 +490,15 @@
           }
         })
         .style("text-anchor", "middle")
-        .attr("transform", "translate(0, -20)");
+        .attr("x", 0)
+        .attr("y", function(d) {
+          if (this.getComputedTextLength() > 200) {
+            return -40;
+          } else {
+            return -20;
+          }
+        })
+        .call(wrap, 200);
 
       simulation.nodes(data.nodes).on("tick", ticked);
 
@@ -527,4 +542,38 @@
       }
     });
   }
+  function wrap(text, width) {
+      text.each(function () {
+        var text = d3.select(this),
+          words = text.text().split(/\s+/).reverse(),
+          word,
+          line = [],
+          lineNumber = 0,
+          lineHeight = 1.1,
+          x = text.attr("x"),
+          y = text.attr("y"),
+          dy = 0,
+          tspan = text
+            .text(null)
+            .append("tspan")
+            .attr("x", x)
+            .attr("y", y)
+            .attr("dy", dy + "em");
+        while ((word = words.pop())) {
+          line.push(word);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > width) {
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [word];
+            tspan = text
+              .append("tspan")
+              .attr("x", x)
+              .attr("y", y)
+              .attr("dy", ++lineNumber * lineHeight + dy + "em")
+              .text(word);
+          }
+        }
+      });
+    }
 </script>
