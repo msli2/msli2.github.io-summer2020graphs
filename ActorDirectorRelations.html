@@ -111,7 +111,7 @@
       >
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="ActorTimelines.html">Actor Timelines</a>
+      <a class="nav-link" href="ActorTimelines.html">Timelines</a>
     </li>
   </ul>
 </nav>
@@ -162,26 +162,26 @@
 <script>
   var margin = { top: 40, right: 20, bottom: 40, left: 20 },
     width = 450 - margin.left - margin.right,
-    height = 660 - margin.top - margin.bottom;
+    height = 700 - margin.top - margin.bottom;
 
   var svg = d3
     .select("div#container")
     .append("svg")
     .attr("preserveAspectRatio", "xMinYMin meet")
-    .attr("viewBox", "0 0 450 660")
+    .attr("viewBox", "0 0 450 700")
     .classed("svg-content", true)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var margin2 = { top: 40, right: 20, bottom: 40, left: 20 },
     width2 = 450 - margin.left - margin.right,
-    height2 = 660 - margin.top - margin.bottom;
+    height2 = 700 - margin.top - margin.bottom;
 
   var svgTwo = d3
     .select("div#containerTwo")
     .append("svg")
     .attr("preserveAspectRatio", "xMinYMin meet")
-    .attr("viewBox", "0 0 450 660")
+    .attr("viewBox", "0 0 450 700")
     .classed("svg-content", true)
     .append("g")
     .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
@@ -300,9 +300,15 @@
         .enter()
         .append("text")
         .style("text-anchor", "middle")
-        .style("font-size", 18)
+        .style("font-size", 19)
         .text("Female Directors " + actor + " Worked With")
-        .attr("transform", "translate(" + width / 2 + "," + margin.right + ")");
+        .attr("y", function (d) {
+          return margin.top;
+        })
+        .attr("x", function (d) {
+          return width / 2;
+        })
+        .call(wrap, width);;
 
       let color = d3
         .scaleOrdinal()
@@ -436,10 +442,10 @@
         .enter()
         .append("text")
         .style("text-anchor", "middle")
-        .style("font-size", 18)
+        .style("font-size", 19)
         .text("The Corresponding Media " + actor + " Acted In")
         .attr("y", function (d) {
-          return margin.top / 2;
+          return margin2.top;
         })
         .attr("x", function (d) {
           return width2 / 2;
@@ -492,7 +498,9 @@
         .style("text-anchor", "middle")
         .attr("x", 0)
         .attr("y", function(d) {
-          if (this.getComputedTextLength() > 200) {
+          if (this.getComputedTextLength() > 320) {
+            return -60;
+          } else if (this.getComputedTextLength() > 200) {
             return -40;
           } else {
             return -20;
