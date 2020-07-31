@@ -67,11 +67,11 @@
     font-size: 14px;
   }
   #accordion {
-    margin-top: 20px;
+    margin-top: 10px;
     border: 1px solid lightgrey;
   }
   .scroll {
-    max-height: 300px;
+    max-height: 500px;
     overflow-y: auto;
   }
   .svg-container {
@@ -122,105 +122,287 @@
     Director and Actor Timelines
   </h5>
   <div class="container-fluid">
-    <div class="offset-md-1 col-md-10" style="margin-top: 30px;">
-      <div id="container" class="svg-container graph"></div>
+    <div class="row" style="padding-left: 15px;">
+      <div class="col-md-3">
+        <div class="tableOfContents">
+          <div id="accordion"></div>
+        </div>
+      </div>
+      <div class="col-md-8" style="margin-top: 10px;">
+        <div class="row">
+          <div class="col-md-6 mt-2 mb-4" id="title" style="font-size: 19px;"></div>
+          <!-- <input
+            class="form-control col-md-6 mb-3"
+            id="myInput"
+            type="text"
+            placeholder="Search.."
+          /> -->
+        </div>
+        <div id="container" class="svg-container graph"></div>
+      </div>
     </div>
   </div>
+  <!-- <script>
+    $(document).ready(function () {
+      $("#myInput").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("svg > g > text").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+      });
+    });
+  </script> -->
   <script>
     d3.csv("actortimelines.csv").then((data) => {
-      var margin = { top: 20, right: 20, bottom: 20, left: 150 },
-        width = 1000 - margin.left - margin.right,
-        timelineheight = 90;
-
-      var directors = [];
-      data.forEach(function (d) {
-        if (!directors.includes(d.director)) {
-          directors.push(d.director);
-        }
+      var choosenlist = [];
+      choosenlist = data.map(function (d) {
+        return d.director;
       });
+      var cardheaders = [];
 
-      var height = (directors.length * timelineheight);
+      for (var i = 0; i < choosenlist.length; i++) {
+        if (cardheaders.includes(choosenlist[i])) {
+          continue;
+        } else {
+          cardheaders.push(choosenlist[i]);
+        }
+      }
 
-      directors.sort();
+      cardheaders.sort();
 
-      var svg = d3
-        .select("div#container")
-        .append("svg")
-        .attr("preserveAspectRatio", "xMinYMin meet")
-        .attr("viewBox", "0 0 1000 " + (height))
-        .classed("svg-content", true)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      d3.select("#accordion").append("div").classed("card", true).html(
+        `<div class="card">
+              <div
+                class="card-header"
+              >
+                Female Directors
+              </div>
+              <div class="card-body scroll">
+              </div>`
+      );
 
-      var tiphover = d3
+      d3.select(".card-body").append("div").html(
+        `<button
+                    class="col-md-12"
+                    onclick="choose('All Directors')"
+                  >
+                  All Directors
+                  </button>`
+      );
+
+      for (var k = 0; k < cardheaders.length; k++) {
+        d3.select(".card-body").append("div").html(
+          `<button
+                    class="col-md-12"
+                    onclick="choose('${cardheaders[k]}')"
+                  >
+                    ${cardheaders[k]}
+                  </button>`
+        );
+      }
+    });
+
+    choose("All Directors");
+
+    function choose(director) {
+      d3.csv("actortimelines.csv").then((data) => {
+        d3.selectAll("svg").remove();
+        d3.selectAll("#title > text").remove();
+        var margin = { top: 20, right: 20, bottom: 20, left: 150 },
+          width = 850 - margin.left - margin.right,
+          timelineheight = 90;
+
+        var choosenlist = [];
+        if (director == "All Directors") {
+          var title = d3
+            .select("#title")
+            .append("text")
+            .style("font-weight", 550)
+            .text(director);
+
+          data.forEach(function (d) {
+            if (!choosenlist.includes(d.director)) {
+              choosenlist.push(d.director);
+            }
+          });
+        } else {
+          var title = d3
+            .select("#title")
+            .append("text")
+            .style("font-weight", 550)
+            .text("Director " + director + " Actors");
+
+          data.forEach(function (d) {
+            if (!choosenlist.includes(d.actor) & (d.director == director)) {
+              choosenlist.push(d.actor);
+            }
+          });
+        }
+
+        var height = choosenlist.length * timelineheight;
+
+        choosenlist.sort();
+
+        var svg = d3
+          .select("div#container")
+          .append("svg")
+          .attr("preserveAspectRatio", "xMinYMin meet")
+          .attr("viewBox", "0 0 850 " + height)
+          .classed("svg-content", true)
+          .append("g")
+          .attr(
+            "transform",
+            "translate(" + margin.left + "," + margin.top + ")"
+          );
+
+        var tiphover = d3
           .tip()
           .attr("class", "d3tipclass")
           .direction("n")
           .offset([-7, 0])
           .html(function (d) {
-            var content =
-              "<span style='margin-left: 2.5px;'><b>" +
-              d.film + ", " + d.year + 
-              "</b></span><br>";
-            return content;
+            if (director == "All Directors") {
+              var content =
+                "<span style='margin-left: 2.5px;'><b>" +
+                d.film +
+                ", " +
+                d.year +
+                "</b></span><br>";
+              return content;
+            } else {
+              var content =
+                "<span style='margin-left: 2.5px;'><b>" +
+                d.film +
+                ", " +
+                d.year +
+                "</b></span><br>" +
+                "<span style='margin-left: 2.5px;'><b>" +
+                d.director +
+                "</b></span><br>";
+              return content;
+            }
           });
         svg.call(tiphover);
 
-      var graphheight = 0;
-      for (var i = 0; i < directors.length; i++) {
-        dataDirector = data.filter(function (d) {
-          return d.director == directors[i];
-        });
+        var graphheight = 0;
+        for (var i = 0; i < choosenlist.length; i++) {
+          dataChoosen = data.filter(function (d) {
+            if (director == "All Directors") {
+              return d.director == choosenlist[i];
+            } else {
+              return d.actor == choosenlist[i];
+            }
+          });
 
-        var x = d3.scaleLinear().range([0, width]);
-        x.domain([d3.min(dataDirector, function(d) {return (d.year - 2); }), d3.max(data, function(d) {return d.year; })])
+          var x = d3.scaleLinear().range([0, width]);
+          x.domain([
+            d3.min(dataChoosen, function (d) {
+              return d.year;
+            }),
+            d3.max(dataChoosen, function (d) {
+              return d.year;
+            }),
+          ]);
 
-        svg
-          .selectAll("dot")
-          .data(dataDirector)
-          .enter()
-          .append("circle")
-          .attr("r", 7)
-          .style("fill", "slategray")
-          .attr("cx", function (d) {
-            return x(d.year);
-          })
-          .attr("cy", function (d) {
-            return graphheight;
-          })
-          .on("mouseover", tiphover.show)
-          .on("mouseout", tiphover.hide);;
+          var formatxAxis = d3.format(".0f");
 
-        var formatxAxis = d3.format(".0f");
+          if (director == "All Directors" || dataChoosen.length > 5) {
+            svg
+              .append("g")
+              .attr("transform", "translate(0," + graphheight + ")")
+              .style("font-size", 15)
+              .style("font-family", "Times New Roman")
+              .style("color", "lightgrey")
+              .call(
+                d3.axisBottom(x).ticks(5).tickFormat(formatxAxis).tickPadding(8)
+              );
 
-        svg
-          .append("g")
-          .attr("transform", "translate(0," + graphheight + ")")
-          .style("font-size", 13)
-          .style("font-family", "Times New Roman")
-          .call(
-            d3
-              .axisBottom(x)
-              .ticks(5)
-              // .tickValues(
-              //   dataDirector.map(function (d) {
-              //     if (d.director == directors[i]) {
-              //       return d.year;
-              //     }
-              //   })
-              // )
-              .tickFormat(formatxAxis)
-          );
+            d3.selectAll("g.tick").style("color", "black");
+          } else if (dataChoosen.length <= 5) {
+            svg
+              .append("g")
+              .attr("transform", "translate(0," + graphheight + ")")
+              .style("font-size", 14)
+              .style("font-family", "Times New Roman")
+              .style("color", "lightgrey")
+              .call(
+                d3
+                  .axisBottom(x)
+                  .ticks()
+                  .tickValues(
+                    dataChoosen.map(function (d) {
+                      return d.year;
+                    })
+                  )
+                  .tickFormat(formatxAxis)
+                  .tickPadding(8)
+              );
 
-        svg.append("text")
-        .attr("transform", "translate(" + (0 - margin.left / 2) + "," + graphheight + ")")
-        .attr("text-anchor", "middle")
-        .style("font-size", 14)
-        .style("font-family", "Times New Roman")
-        .text(directors[i]);
+            d3.selectAll("g.tick").style("color", "black");
+          }
 
-        graphheight += timelineheight;
-      }
-    });
+          svg
+            .selectAll("dot")
+            .data(dataChoosen)
+            .enter()
+            .append("circle")
+            .attr("r", 8)
+            .style("fill", "slategray")
+            .attr("cx", function (d) {
+              return x(d.year);
+            })
+            .attr("cy", function (d) {
+              return graphheight;
+            })
+            .on("mouseover", tiphover.show)
+            .on("mouseout", tiphover.hide);
+
+          svg
+            .append("text")
+            .attr("x", 0 - margin.left)
+            .attr("y", graphheight + 5)
+            .style("font-size", 15)
+            .style("font-family", "Times New Roman")
+            .text(choosenlist[i])
+            .call(wrap, margin.left - 10);
+
+          graphheight += timelineheight;
+        }
+      });
+    }
+    function wrap(text, width) {
+      text.each(function () {
+        var text = d3.select(this),
+          words = text.text().split(/\s+/).reverse(),
+          word,
+          line = [],
+          lineNumber = 0,
+          lineHeight = 1.1,
+          x = text.attr("x"),
+          y = text.attr("y"),
+          dy = 0,
+          tspan = text
+            .text(null)
+            .append("tspan")
+            .attr("x", x)
+            .attr("y", y)
+            .attr("dy", dy + "em");
+        while ((word = words.pop())) {
+          line.push(word);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > width) {
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [word];
+            tspan = text
+              .append("tspan")
+              .attr("x", x)
+              .attr("y", y)
+              .attr("dy", ++lineNumber * lineHeight + dy + "em")
+              .text(word);
+          }
+        }
+      });
+    }
   </script>
 </body>
