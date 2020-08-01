@@ -67,11 +67,11 @@
     font-size: 14px;
   }
   #accordion {
-    margin-top: 10px;
+    margin-top: 20px;
     border: 1px solid lightgrey;
   }
   .scroll {
-    max-height: 500px;
+    max-height: 370px;
     overflow-y: auto;
   }
   .svg-container {
@@ -89,6 +89,7 @@
   }
   .graph {
     overflow-y: scroll;
+    margin-bottom: 10px;
   }
 </style>
 <body>
@@ -102,11 +103,11 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="GenderDifferencesFilm.html"
-          >Gender Differences Film</a
+          >Gender Differences Media</a
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="RecurringActors.html">Recurring directors</a>
+        <a class="nav-link" href="RecurringActors.html">Recurring Actors</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="ActorDirectorRelations.html"
@@ -118,40 +119,57 @@
       </li>
     </ul>
   </nav>
-  <h5 style="padding-left: 15px; padding-top: 10px;">
-    Director and Actor Timelines
-  </h5>
+  <div class="d-flex justify-content-between">
+    <h5 style="padding-left: 15px; padding-top: 10px;">
+      Director and Actor Timelines
+    </h5>
+    <div class="dropdown">
+      <button class="dropdown-toggle mt-2 mr-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Color Key
+      </button>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <li class="dropdown-item"><span style="color: rgb(17, 138, 178)">Blue: </span>More Male Actors</li>
+        <li class="dropdown-item"><span style="color: rgb(244, 124, 152)">Pink: </span> More Female Actors</li>
+        <li class="dropdown-item"><span style="color: #212529">Black: </span> Equal Actors</li>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid">
     <div class="row" style="padding-left: 15px;">
       <div class="col-md-3">
         <div class="tableOfContents">
+          <div
+            style="border: 1px solid lightgrey; padding: 6px; margin-top: 10px;"
+          >
+            <h6
+              style="
+                padding: 5px;
+                text-align: center;
+                font-size: 17px;
+                font-weight: 550;
+              "
+            >
+              Summary About Director
+            </h6>
+            <div>
+              <p id="summary" style="text-align: center; line-height: 1.2;"></p>
+            </div>
+          </div>
           <div id="accordion"></div>
         </div>
       </div>
       <div class="col-md-8" style="margin-top: 10px;">
         <div class="row">
-          <div class="col-md-6 mt-2 mb-4" id="title" style="font-size: 19px;"></div>
-          <!-- <input
-            class="form-control col-md-6 mb-3"
-            id="myInput"
-            type="text"
-            placeholder="Search.."
-          /> -->
+          <div
+            class="col-md-6 mt-2 mb-4"
+            id="title"
+            style="font-size: 18px;"
+          ></div>
         </div>
-        <div id="container" class="svg-container graph"></div>
+        <div id="container" class="svg-container graph mt-1"></div>
       </div>
     </div>
   </div>
-  <!-- <script>
-    $(document).ready(function () {
-      $("#myInput").on("keyup", function () {
-        var value = $(this).val().toLowerCase();
-        $("svg > g > text").filter(function () {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-        });
-      });
-    });
-  </script> -->
   <script>
     d3.csv("actortimelines.csv").then((data) => {
       var choosenlist = [];
@@ -208,11 +226,13 @@
       d3.csv("actortimelines.csv").then((data) => {
         d3.selectAll("svg").remove();
         d3.selectAll("#title > text").remove();
-        var margin = { top: 20, right: 20, bottom: 20, left: 150 },
-          width = 850 - margin.left - margin.right,
+        d3.selectAll("p#summary > text").remove();
+        var margin = { top: 20, right: 20, bottom: 20, left: 120 },
+          width = 800 - margin.left - margin.right,
           timelineheight = 90;
 
         var choosenlist = [];
+        var choosenfilms = [];
         if (director == "All Directors") {
           var title = d3
             .select("#title")
@@ -225,6 +245,38 @@
               choosenlist.push(d.director);
             }
           });
+
+          var malecount = 0;
+          var femalecount = 0;
+          var equalcount = 0;
+
+          data.forEach(function (d) {
+            if (!choosenfilms.includes(d.film)) {
+              choosenfilms.push(d.film);
+              if (d.maleactors > d.femaleactors) {
+                malecount++;
+              } else if (d.maleactors < d.femaleactors) {
+                femalecount++;
+              } else {
+                equalcount++;
+              }
+            }
+          });
+
+          var summary = d3
+            .select("p#summary")
+            .append("text")
+            .style("font-size", 16)
+            .text(
+                director +
+                " have " +
+                malecount +
+                " films with more males actors, " +
+                femalecount +
+                " films with more female actors and " +
+                equalcount +
+                " films with equal male, female actors."
+            );
         } else {
           var title = d3
             .select("#title")
@@ -237,6 +289,39 @@
               choosenlist.push(d.actor);
             }
           });
+
+          var malecount = 0;
+          var femalecount = 0;
+          var equalcount = 0;
+
+          data.forEach(function (d) {
+            if (!choosenfilms.includes(d.film) & (d.director == director)) {
+              choosenfilms.push(d.film);
+              if (d.maleactors > d.femaleactors) {
+                malecount++;
+              } else if (d.maleactors < d.femaleactors) {
+                femalecount++;
+              } else {
+                equalcount++;
+              }
+            }
+          });
+
+          var summary = d3
+            .select("p#summary")
+            .append("text")
+            .style("font-size", 16)
+            .text(
+              "Director " +
+                director +
+                " has " +
+                malecount +
+                " films with more males actors, " +
+                femalecount +
+                " films with more female actors and " +
+                equalcount +
+                " films with equal male, female actors."
+            );
         }
 
         var height = choosenlist.length * timelineheight;
@@ -247,7 +332,7 @@
           .select("div#container")
           .append("svg")
           .attr("preserveAspectRatio", "xMinYMin meet")
-          .attr("viewBox", "0 0 850 " + height)
+          .attr("viewBox", "0 0 800 " + height)
           .classed("svg-content", true)
           .append("g")
           .attr(
@@ -259,7 +344,13 @@
           .tip()
           .attr("class", "d3tipclass")
           .direction("n")
-          .offset([-7, 0])
+          .offset(function (d) {
+            if (director == "All Directors") {
+              return [-5, 0];
+            } else {
+              return [-3, 0];
+            }
+          })
           .html(function (d) {
             if (director == "All Directors") {
               var content =
@@ -306,7 +397,7 @@
 
           var formatxAxis = d3.format(".0f");
 
-          if (director == "All Directors" || dataChoosen.length > 5) {
+          if (director == "All Directors" || dataChoosen.length >= 4) {
             svg
               .append("g")
               .attr("transform", "translate(0," + graphheight + ")")
@@ -318,7 +409,7 @@
               );
 
             d3.selectAll("g.tick").style("color", "black");
-          } else if (dataChoosen.length <= 5) {
+          } else if (dataChoosen.length < 4) {
             svg
               .append("g")
               .attr("transform", "translate(0," + graphheight + ")")
@@ -347,7 +438,15 @@
             .enter()
             .append("circle")
             .attr("r", 8)
-            .style("fill", "slategray")
+            .style("fill", function (d) {
+              if (d.maleactors > d.femaleactors) {
+                return "rgb(17, 138, 178)";
+              } else if (d.femaleactors > d.maleactors) {
+                return "rgb(244, 124, 152)";
+              } else {
+                return "#212529";
+              }
+            })
             .attr("cx", function (d) {
               return x(d.year);
             })
