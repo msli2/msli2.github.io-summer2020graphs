@@ -86,7 +86,7 @@
     border: 1px solid lightgrey;
   }
   .scroll {
-    max-height: 300px;
+    max-height: 250px;
     overflow-y: auto;
   }
 </style>
@@ -115,22 +115,9 @@
     </li>
   </ul>
 </nav>
-<div class="d-flex justify-content-between">
-  <h5 style="padding-left: 15px; padding-top: 10px;">
-    Different Directors and Their Medias Per Actor
-  </h5>
-  <div class="dropdown">
-    <button class="dropdown-toggle mt-2 mr-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Color Key
-    </button>
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-      <li class="dropdown-item"><span style="color: rgb(17, 138, 178)">Blue: </span>Male Actor</li>
-      <li class="dropdown-item"><span style="color: rgb(244, 124, 152)">Pink: </span>Female Actor</li>
-      <li class="dropdown-item"><span style="color: #DBA506">Gold: </span>Director</li>
-      <li class="dropdown-item"><span style="color: #212529">Black: </span>Media</li>
-    </div>
-  </div>
-</div>
+<h5 style="padding-left: 15px; padding-top: 10px;">
+  Different Directors and Their Medias Per Actor
+</h5>
 <div class="container-fluid">
   <div class="row" style="padding-left: 15px;">
     <div class="col-md-3">
@@ -149,12 +136,29 @@
           <p id="summary" style="text-align: center; line-height: 1.2;"></p>
         </div>
       </div>
+      <div class="d-flex text-center mt-3" style="font-size: 14px;">
+        <h6
+          class="w-100 mt-3"
+          style="font-weight: 600; text-align: center;"
+        >
+          Color Key
+        </h6>
+        <p class="w-100" style="padding: 4px;">
+          <span style="color: rgb(17, 138, 178);">Blue: </span>Male Actors
+        </p>
+        <p class="w-100" style="padding: 4px;">
+          <span style="color: rgb(244, 124, 152);">Pink: </span>Female Actors
+        </p>
+        <p class="w-100" style="padding: 4px;">
+          <span style="color: #dba506;">Gold: </span>Female Director
+        </p>
+        <p class="w-100" style="padding: 4px;"><span style="color: #212529;">Black: </span>Film Or Media</p>
+      </div>
       <input
         class="form-control"
         id="myInput"
         type="text"
         placeholder="Search.."
-        style="margin-top: 15px;"
       />
       <div id="accordion"></div>
     </div>
@@ -175,26 +179,26 @@
 <script>
   var margin = { top: 40, right: 20, bottom: 40, left: 20 },
     width = 450 - margin.left - margin.right,
-    height = 700 - margin.top - margin.bottom;
+    height = 800 - margin.top - margin.bottom;
 
   var svg = d3
     .select("div#container")
     .append("svg")
     .attr("preserveAspectRatio", "xMinYMin meet")
-    .attr("viewBox", "0 0 450 700")
+    .attr("viewBox", "0 0 450 800")
     .classed("svg-content", true)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var margin2 = { top: 40, right: 20, bottom: 40, left: 20 },
     width2 = 450 - margin.left - margin.right,
-    height2 = 700 - margin.top - margin.bottom;
+    height2 = 800 - margin.top - margin.bottom;
 
   var svgTwo = d3
     .select("div#containerTwo")
     .append("svg")
     .attr("preserveAspectRatio", "xMinYMin meet")
-    .attr("viewBox", "0 0 450 700")
+    .attr("viewBox", "0 0 450 800")
     .classed("svg-content", true)
     .append("g")
     .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
@@ -316,12 +320,12 @@
         .style("font-size", 19)
         .text("Female Directors " + actor + " Worked With")
         .attr("y", function (d) {
-          return margin.top;
+          return margin.top * 2;
         })
         .attr("x", function (d) {
           return width / 2;
         })
-        .call(wrap, width);;
+        .call(wrap, width);
 
       let color = d3
         .scaleOrdinal()
@@ -458,7 +462,7 @@
         .style("font-size", 19)
         .text("The Corresponding Media " + actor + " Acted In")
         .attr("y", function (d) {
-          return margin2.top;
+          return margin2.top * 2;
         })
         .attr("x", function (d) {
           return width2 / 2;
@@ -510,7 +514,7 @@
         })
         .style("text-anchor", "middle")
         .attr("x", 0)
-        .attr("y", function(d) {
+        .attr("y", function (d) {
           if (this.getComputedTextLength() > 320) {
             return -60;
           } else if (this.getComputedTextLength() > 200) {
@@ -564,37 +568,37 @@
     });
   }
   function wrap(text, width) {
-      text.each(function () {
-        var text = d3.select(this),
-          words = text.text().split(/\s+/).reverse(),
-          word,
-          line = [],
-          lineNumber = 0,
-          lineHeight = 1.1,
-          x = text.attr("x"),
-          y = text.attr("y"),
-          dy = 0,
+    text.each(function () {
+      var text = d3.select(this),
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        lineHeight = 1.1,
+        x = text.attr("x"),
+        y = text.attr("y"),
+        dy = 0,
+        tspan = text
+          .text(null)
+          .append("tspan")
+          .attr("x", x)
+          .attr("y", y)
+          .attr("dy", dy + "em");
+      while ((word = words.pop())) {
+        line.push(word);
+        tspan.text(line.join(" "));
+        if (tspan.node().getComputedTextLength() > width) {
+          line.pop();
+          tspan.text(line.join(" "));
+          line = [word];
           tspan = text
-            .text(null)
             .append("tspan")
             .attr("x", x)
             .attr("y", y)
-            .attr("dy", dy + "em");
-        while ((word = words.pop())) {
-          line.push(word);
-          tspan.text(line.join(" "));
-          if (tspan.node().getComputedTextLength() > width) {
-            line.pop();
-            tspan.text(line.join(" "));
-            line = [word];
-            tspan = text
-              .append("tspan")
-              .attr("x", x)
-              .attr("y", y)
-              .attr("dy", ++lineNumber * lineHeight + dy + "em")
-              .text(word);
-          }
+            .attr("dy", ++lineNumber * lineHeight + dy + "em")
+            .text(word);
         }
-      });
-    }
+      }
+    });
+  }
 </script>
