@@ -99,32 +99,36 @@
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="d3-tip.js"></script>
   <nav class="navbar navbar-expand-md">
-    <a class="navbar-brand" href="index.html">Summer 2020 Graphs</a>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">Gender Differences Director</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="GenderDifferencesFilm.html">Gender Differences Media</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="RecurringActors.html">Recurring Actors</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ActorDirectorRelations.html">Actor Director Relations</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ActorTimelines.html">Timelines</a>
-      </li>
-    </ul>
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Summer 2020 Graphs</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Gender Differences Director</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="GenderDifferencesFilm.html"
+            >Gender Differences Media</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="RecurringActors.html">Recurring Actors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ActorDirectorRelations.html"
+            >Actor Director Relations</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ActorTimelines.html">Timelines</a>
+        </li>
+      </ul>
+    </div>
   </nav>
-  <div class="d-flex justify-content-between">
-    <h5 style="padding-left: 15px; padding-top: 10px;">
+  <div class="container">
+    <h5 style="padding-top: 10px;">
       Actor Gender Differences Per Media
     </h5>
-  </div>
-  <div class="container-fluid">
-    <div class="row" style="padding-left: 15px;">
+    <div class="row">
       <div class="col-md-3">
         <div
           style="border: 1px solid lightgrey; padding: 6px; margin-top: 10px;"
@@ -144,33 +148,24 @@
           </div>
         </div>
         <div class="d-flex text-center mt-3 mb-1" style="font-size: 14px;">
-          <h6
-            class="w-100 mt-2"
-            style="font-weight: 600; text-align: center;"
-          >
+          <h6 class="w-100 mt-2" style="font-weight: 600; text-align: center;">
             Color Key
           </h6>
           <p class="w-100" style="padding: 4px;">
-              <span style="color: rgb(17, 138, 178)">Blue: </span>Male Actors
+            <span style="color: rgb(17, 138, 178);">Blue: </span>Male Actors
           </p>
           <p class="w-100" style="padding: 4px;">
-            <span style="color: rgb(244, 124, 152)">Pink: </span>Female Actors
+            <span style="color: rgb(244, 124, 152);">Pink: </span>Female Actors
           </p>
         </div>
-        <h6
-        style="
-          text-align: center;
-          font-size: 17px;
-          font-weight: 550;
-        "
-      >
-        Female Directors
-      </h6>
+        <h6 style="text-align: center; font-size: 17px; font-weight: 550;">
+          Female Directors
+        </h6>
         <div class="tableOfContents tablescroll">
           <div id="accordion"></div>
         </div>
       </div>
-      <div id="container" class="svg-container col-md-8"></div>
+      <div id="container" class="svg-container col-md-9"></div>
     </div>
     <script>
       // dimensions
@@ -354,12 +349,12 @@
           d3.select("p#summary")
             .append("text")
             .style("text-anchor", "middle")
-            .style("font-size", 17)
+            .style("font-size", 16)
             .text(function (d) {
               return (
                 "Director " +
                 director +
-                " has worked with " + 
+                " has worked with " +
                 maleNumTotal +
                 " male unique actors and " +
                 femaleNumTotal +
@@ -394,7 +389,7 @@
             .append("text")
             .attr("transform", "translate(" + width / 2 + "," + 20 + ")")
             .style("text-anchor", "middle")
-            .style("font-size", 17)
+            .style("font-size", 16)
             .text(function (d) {
               if (d.film == film && count1 == 0) {
                 count1 += 1;
@@ -458,14 +453,8 @@
 
           svg
             .append("text")
-            .attr(
-              "transform",
-              "translate(" +
-                width / 2 +
-                "," +
-                (height + margin.bottom / 2) +
-                ")"
-            )
+            .attr("x", width / 2)
+            .attr("y", height + margin.bottom / 3)
             .style("text-anchor", "middle")
             .text(
               "This film, " +
